@@ -33,19 +33,19 @@ class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<ScaffoldState> drawerKey = GlobalKey<ScaffoldState>();
 
   List<GlobalMenuModel> menuItem = [
-    GlobalMenuModel(img: Images.homeInc, text: 'Home'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Fair Face Plaster'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Vinyl Flooring Solution'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Epoxy Flooring Solution'),
-    GlobalMenuModel(img: Images.appLogo, text: 'PU Flooring Solution'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Floor Hardener Solution'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Polished Concrete'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Waterproofing Solution'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Damp Proofing Solution'),
-    GlobalMenuModel(img: Images.appLogo, text: '3D Epoxy Flooring Solution'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Expansion Joint Sealant'),
-    GlobalMenuModel(img: Images.appLogo, text: 'ETP Protective Coating'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Construction Chemicals'),
+    GlobalMenuModel(img: Images.serviceInc, text: 'Home'),
+    GlobalMenuModel(img: Images.serviceInc, text: 'Fair Face Plaster'),
+    GlobalMenuModel(img: Images.serviceInc, text: 'Vinyl Flooring Solution'),
+    GlobalMenuModel(img: Images.serviceInc, text: 'Epoxy Flooring Solution'),
+    GlobalMenuModel(img: Images.serviceInc, text: 'PU Flooring Solution'),
+    GlobalMenuModel(img: Images.serviceInc, text: 'Floor Hardener Solution'),
+    GlobalMenuModel(img: Images.serviceInc, text: 'Polished Concrete'),
+    GlobalMenuModel(img: Images.serviceInc, text: 'Waterproofing Solution'),
+    GlobalMenuModel(img: Images.serviceInc, text: 'Damp Proofing Solution'),
+    GlobalMenuModel(img: Images.serviceInc, text: '3D Epoxy Flooring Solution'),
+    GlobalMenuModel(img: Images.serviceInc, text: 'Expansion Joint Sealant'),
+    GlobalMenuModel(img: Images.serviceInc, text: 'ETP Protective Coating'),
+    GlobalMenuModel(img: Images.serviceInc, text: 'Construction Chemicals'),
 
   ];
 
@@ -147,10 +147,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      mainAxisSpacing: 8,
-                      crossAxisSpacing: 8,
-                      mainAxisExtent: 77),
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                      mainAxisSpacing: 5,
+                      crossAxisSpacing: 5,
+                      mainAxisExtent: 65),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
                   itemBuilder: (ctx, index) {
                     return GestureDetector(
                       onTap: () {
@@ -197,9 +197,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         }
                       },
                       child: HomeMenuWidget(
-                        height: 30,
-                        width: 30,
-                        maxLines: 1,
+                        height: 24,
+                        width: 24,
+                        maxLines: 2,
                         imagePath: menuItem[index].img,
                         text: menuItem[index].text,
                         subText: menuItem[index].subText ?? "",

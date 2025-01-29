@@ -9,16 +9,26 @@ class Images {
   static const String eye2 = 'assets/main_src/icons/eye2.png';
 
   static const String homeInc = 'assets/icons/home.png';
-  static const String contactInc = 'assets/icons/contact.png';
+  static const String contactInc = 'assets/icons/contact-information.png';
+  static const String greenEnergyInc = 'assets/icons/green-energy.png';
+  static const String productInc = 'assets/icons/product.png';
+  static const String videoInc = 'assets/icons/video.png';
+  static const String pictureInc = 'assets/icons/picture.png';
+  static const String informationInc = 'assets/icons/information.png';
+  static const String blogInc = 'assets/icons/blog.png';
+  static const String faqInc = 'assets/icons/faq.png';
+  static const String termsAndConditionsInc = 'assets/icons/terms-and-conditions.png';
+  static const String privacyAndPolicyInc = 'assets/icons/privacy-and-policy.png';
   static const String notificationInc = 'assets/icons/notification.png';
+  static const String shareInc = 'assets/icons/share.png';
+  static const String ratingInc = 'assets/icons/rating.png';
+  static const String policyInc = 'assets/icons/policy.png';
   static const String userInc = 'assets/icons/user.png';
-  static const String share = 'assets/icons/share.png';
-  static const String rating = 'assets/icons/star.png';
-  static const String privacyPolicy = 'assets/icons/privacy_policy.png';
   static const String userPlaceholderIc = 'assets/images/user_placeholder.jpg';
 
   //::::::::::::::::::::::::: All Logo Img
   static const String appLogo = 'assets/images/logo.png';
+  static const String serviceInc = 'assets/icons/product.png';
 
   static const String facebookInc = 'assets/icons/facebook.png';
   static const String tikTokInc = 'assets/icons/tiktok.png';

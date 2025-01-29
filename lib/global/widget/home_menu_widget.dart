@@ -25,7 +25,7 @@ class HomeMenuWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: size(context).width,
-      padding: const EdgeInsets.all(5),
+      padding: const EdgeInsets.all(2),
       decoration: BoxDecoration(
         color: ColorRes.white,
         boxShadow: [
@@ -37,6 +37,8 @@ class HomeMenuWidget extends StatelessWidget {
         ],
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 18, right: 18),
@@ -51,25 +53,27 @@ class HomeMenuWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              GlobalText(
-                str: text,
-                color: ColorRes.primaryColor,
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.center,
-                maxLines: maxLines ?? 1,
+              Expanded(
+                child: GlobalText(
+                  str: text,
+                  color: ColorRes.black,
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                  maxLines: maxLines ?? 1,
+                ),
               ),
-              const SizedBox(width: 5),
-              GlobalText(
-                str: subText,
-                color: ColorRes.black,
-                fontSize: 10,
-                fontWeight: FontWeight.w400,
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.center,
-                maxLines: maxLines ?? 1,
-              ),
+              // const SizedBox(width: 5),
+              // GlobalText(
+              //   str: subText,
+              //   color: ColorRes.black,
+              //   fontSize: 10,
+              //   fontWeight: FontWeight.w400,
+              //   overflow: TextOverflow.ellipsis,
+              //   textAlign: TextAlign.center,
+              //   maxLines: maxLines ?? 1,
+              // ),
             ],
           ),
         ],
