@@ -13,6 +13,7 @@ import 'blog_screen.dart';
 import 'contact_screen/contact_screen.dart';
 import 'faq_screen.dart';
 import 'gallery_screen.dart';
+import 'kalti_home_screen.dart';
 import 'privacy_policy_screen.dart';
 import 'service_screen.dart';
 import 'solution_screen.dart';
@@ -181,7 +182,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       onTap: () {
                         switch (index) {
                           case 0:
-                            Get.to(() => const HomeScreen());
+                            Get.to(() => const KaltiHomeScreen());
                             break;
                           case 1:
                             Get.to(() => const SolutionScreen());

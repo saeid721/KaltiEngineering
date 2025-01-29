@@ -35,7 +35,7 @@ class _VideoScreenState extends State<VideoScreen> {
         },
       ))
       ..loadRequest(
-        Uri.parse('https://rapidsave.com/'),
+        Uri.parse('https://kaltiengineering.com/'),
       );
   }
 

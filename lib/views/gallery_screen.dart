@@ -35,7 +35,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
         },
       ))
       ..loadRequest(
-        Uri.parse('https://rapidsave.com/'),
+        Uri.parse('https://kaltiengineering.com/'),
       );
   }
 

@@ -9,7 +9,6 @@ import '../../../../../global/widget/global_image_loader.dart';
 import '../../../../../global/widget/global_text.dart';
 import '../global/constants/colors_resources.dart';
 import 'global/constants/enum.dart';
-import 'views/about_screen.dart';
 import 'views/contact_screen/contact_screen.dart';
 import 'views/home_screen.dart';
 import 'views/notification_screen/notification_screen.dart';

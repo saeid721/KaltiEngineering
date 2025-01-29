@@ -35,7 +35,7 @@ class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
         },
       ))
       ..loadRequest(
-        Uri.parse('https://rapidsave.com/'),
+        Uri.parse('https://kaltiengineering.com/'),
       );
   }
 

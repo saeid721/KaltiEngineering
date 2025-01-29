@@ -35,7 +35,7 @@ class _FaqScreenState extends State<FaqScreen> {
         },
       ))
       ..loadRequest(
-        Uri.parse('https://rapidsave.com/'),
+        Uri.parse('https://kaltiengineering.com/'),
       );
   }
 
