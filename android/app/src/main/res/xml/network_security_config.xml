@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">opac.saulibrary.edu.bd</domain>
+        <domain includeSubdomains="true">archive.saulibrary.edu.bd</domain>
+        <domain includeSubdomains="true">login.research4life.org/tacgw/AppPortal</domain>
+        <domain includeSubdomains="true">emerald.com/insight</domain>
+    </domain-config>
+</network-security-config>
