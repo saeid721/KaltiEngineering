@@ -10,6 +10,7 @@ import '../../../../../global/widget/global_text.dart';
 import '../global/constants/colors_resources.dart';
 import 'global/constants/enum.dart';
 import 'views/about_screen.dart';
+import 'views/contact_screen/contact_screen.dart';
 import 'views/home_screen.dart';
 import 'views/notification_screen/notification_screen.dart';
 import 'views/privacy_policy_screen/privacy_policy_screen.dart';
@@ -82,7 +83,7 @@ class _CustomDrawerScreenState extends State<CustomDrawerScreen> {
                               Get.to(() => const HomeScreen());
                               break;
                             case 1:
-                              Get.to(() => const AboutScreen());
+                              Get.to(() => const ContactScreen());
                               break;
                             case 2:
                               Get.to(() => const NotificationScreen());
