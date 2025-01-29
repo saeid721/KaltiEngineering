@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
     GlobalMenuModel(img: Images.vimeoInc, text: 'Vimeo'),
     GlobalMenuModel(img: Images.pinterestInc, text: 'Pinterest'),
     GlobalMenuModel(img: Images.tumblrInc, text: 'Tumblr'),
-    GlobalMenuModel(img: Images.weChatInc, text: 'WeChat'),
+    // GlobalMenuModel(img: Images.weChatInc, text: 'WeChat'),
   ];
 
   int currentIndex = 0;

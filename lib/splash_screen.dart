@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'global/constants/colors_resources.dart';
 import 'global/constants/enum.dart';
 import 'global/widget/global_image_loader.dart';
@@ -23,32 +22,31 @@ class SplashScreen extends StatelessWidget {
         height: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [ColorRes.white, ColorRes.backgroundColor],
+            colors: [ColorRes.borderColor, ColorRes.white],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
         ),
         child: Stack(
           children: [
-
             // Center Content with Card
             Center(
-              child:
-                    Hero(
-                      tag: 'app_logo',
-                      child: GlobalImageLoader(
-                        imagePath: 'assets/images/logo.png',
-                        width: 250,
-                        imageFor: ImageFor.asset,
-                      ),
-                    ),
+              child: Hero(
+                tag: 'app_logo',
+                child: GlobalImageLoader(
+                  imagePath: 'assets/images/logo.png',
+                  width: 250,
+                  imageFor: ImageFor.asset,
                 ),
+              ),
+            ),
 
             // Bottom Description and Loader
             Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 50.0),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 32.0, vertical: 50.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -62,7 +60,6 @@ class SplashScreen extends StatelessWidget {
                       fontFamily: 'Rubik',
                       fontStyle: FontStyle.italic,
                     ),
-
                   ],
                 ),
               ),
