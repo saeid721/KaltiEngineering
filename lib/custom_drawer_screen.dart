@@ -161,9 +161,9 @@ class _CustomDrawerScreenState extends State<CustomDrawerScreen> {
                                 height: 20,
                                 width: 20,
                                 fit: BoxFit.fill,
-                                color: isClick == index
-                                    ? Colors.white
-                                    : ColorRes.primaryColor,
+                                // color: isClick == index
+                                //     ? Colors.white
+                                //     : ColorRes.primaryColor,
                               ),
                               const SizedBox(width: 10),
                               GlobalText(
