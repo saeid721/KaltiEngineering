@@ -59,18 +59,18 @@ class _HomeScreenState extends State<HomeScreen> {
     GlobalMenuModel(img: Images.appLogo, text: 'Privacy & Policy'),
     GlobalMenuModel(img: Images.appLogo, text: 'FAQ'),
 
-    GlobalMenuModel(img: Images.whatsAppInc, text: 'WhatsApp'),
-    GlobalMenuModel(img: Images.telegramInc, text: 'Telegram'),
-    GlobalMenuModel(img: Images.facebookInc, text: 'Facebook'),
-    GlobalMenuModel(img: Images.linkedInInc, text: 'Linkedin'),
-    GlobalMenuModel(img: Images.instagramInc, text: 'Instagram'),
-    GlobalMenuModel(img: Images.threadsInc, text: 'Threads'),
-    GlobalMenuModel(img: Images.twitterInc, text: 'Twitter'),
-    GlobalMenuModel(img: Images.tikTokInc, text: 'TikTok'),
-    GlobalMenuModel(img: Images.youTubeInc, text: 'YouTube'),
-    GlobalMenuModel(img: Images.vimeoInc, text: 'Vimeo'),
-    GlobalMenuModel(img: Images.pinterestInc, text: 'Pinterest'),
-    GlobalMenuModel(img: Images.tumblrInc, text: 'Tumblr'),
+    // GlobalMenuModel(img: Images.whatsAppInc, text: 'WhatsApp'),
+    // GlobalMenuModel(img: Images.telegramInc, text: 'Telegram'),
+    // GlobalMenuModel(img: Images.facebookInc, text: 'Facebook'),
+    // GlobalMenuModel(img: Images.linkedInInc, text: 'Linkedin'),
+    // GlobalMenuModel(img: Images.instagramInc, text: 'Instagram'),
+    // GlobalMenuModel(img: Images.threadsInc, text: 'Threads'),
+    // GlobalMenuModel(img: Images.twitterInc, text: 'Twitter'),
+    // GlobalMenuModel(img: Images.tikTokInc, text: 'TikTok'),
+    // GlobalMenuModel(img: Images.youTubeInc, text: 'YouTube'),
+    // GlobalMenuModel(img: Images.vimeoInc, text: 'Vimeo'),
+    // GlobalMenuModel(img: Images.pinterestInc, text: 'Pinterest'),
+    // GlobalMenuModel(img: Images.tumblrInc, text: 'Tumblr'),
     // GlobalMenuModel(img: Images.weChatInc, text: 'WeChat'),
   ];
 
@@ -252,15 +252,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           case 23:
                             Get.to(() => const TumblrScreen());
                             break;
-                          case 24:
-                            Get.to(() => const TelegramScreen());
-                            break;
-                          case 25:
-                            Get.to(() => const WhatsAppScreen());
-                            break;
-                          case 26:
-                            Get.to(() => const WeChatScreen());
-                            break;
+                          // case 24:
+                          //   Get.to(() => const TelegramScreen());
+                          //   break;
+                          // case 25:
+                          //   Get.to(() => const WhatsAppScreen());
+                          //   break;
+                          // case 26:
+                          //   Get.to(() => const WeChatScreen());
+                          //   break;
                         }
                       },
                       child: HomeMenuWidget(

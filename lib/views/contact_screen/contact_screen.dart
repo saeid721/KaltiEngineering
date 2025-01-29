@@ -1,10 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../custom_drawer_screen.dart';
 import '../../global/constants/colors_resources.dart';
-import '../../global/widget/custom_app_bar.dart';
+import '../../global/constants/images.dart';
+import '../../global/model.dart';
 import '../../global/widget/global_app_bar.dart';
-import '../notification_screen/notification_screen.dart';
+import '../../global/widget/global_text.dart';
+import '../social_media_screen/facebook_screen.dart';
+import '../social_media_screen/instagram_screen.dart';
+import '../social_media_screen/linkedin_screen.dart';
+import '../social_media_screen/pinterest_screen.dart';
+import '../social_media_screen/telegram_screen.dart';
+import '../social_media_screen/threads_screen.dart';
+import '../social_media_screen/tiktok_screen.dart';
+import '../social_media_screen/tumblr_screen.dart';
+import '../social_media_screen/twitter_screen.dart';
+import '../social_media_screen/vimeo_screen.dart';
+import '../social_media_screen/we_chat_screen.dart';
+import '../social_media_screen/whatsapp_screen.dart';
+import '../social_media_screen/youtube_screen.dart';
 import 'components/contact_widget.dart';
+import 'components/social_media_widget.dart';
 
 class ContactScreen extends StatefulWidget {
   const ContactScreen({super.key});
@@ -16,10 +32,21 @@ class ContactScreen extends StatefulWidget {
 class _ContactScreenState extends State<ContactScreen> {
   final GlobalKey<ScaffoldState> drawerKey = GlobalKey<ScaffoldState>();
 
-  @override
-  void initState() {
-    super.initState();
-  }
+  List<GlobalMenuModel> menuItem = [
+    GlobalMenuModel(img: Images.facebookInc, text: 'Facebook'),
+    GlobalMenuModel(img: Images.linkedInInc, text: 'Linkedin'),
+    GlobalMenuModel(img: Images.instagramInc, text: 'Instagram'),
+    GlobalMenuModel(img: Images.threadsInc, text: 'Threads'),
+    GlobalMenuModel(img: Images.twitterInc, text: 'Twitter'),
+    GlobalMenuModel(img: Images.tikTokInc, text: 'TikTok'),
+    GlobalMenuModel(img: Images.youTubeInc, text: 'YouTube'),
+    GlobalMenuModel(img: Images.vimeoInc, text: 'Vimeo'),
+    GlobalMenuModel(img: Images.pinterestInc, text: 'Pinterest'),
+    GlobalMenuModel(img: Images.tumblrInc, text: 'Tumblr'),
+    GlobalMenuModel(img: Images.whatsAppInc, text: 'WhatsApp'),
+    GlobalMenuModel(img: Images.telegramInc, text: 'Telegram'),
+    GlobalMenuModel(img: Images.weChatInc, text: 'WeChat'),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -27,50 +54,129 @@ class _ContactScreenState extends State<ContactScreen> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(56),
+        preferredSize: const Size.fromHeight(60),
         child: GlobalAppBar(
-          title: 'যোগাযোগ',
+          title: 'Kalti Engineering',
           notiOnTap: () {},
-          actions: [
-            IconButton(
-              onPressed: () {
-                Get.to(() => NotificationScreen());
-              },
-              icon: const Icon(Icons.notifications_on_rounded, color: ColorRes.white,),
-            ),
-          ],
+          leading: GestureDetector(
+            onTap: () {
+              if (drawerKey.currentState!.isDrawerOpen) {
+                drawerKey.currentState!.closeDrawer();
+              } else {
+                drawerKey.currentState!.openDrawer();
+              }
+            },
+            child: const Icon(Icons.menu, color: ColorRes.white),
+          ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
+      key: drawerKey,
+      drawer: const CustomDrawerScreen(),
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
+            spacing: 5,
             children: [
-              AboutWidget(
-                title: 'Feni City',
-                subTitle: 'অ্যাপ এর মাধ্যমে যে কোন প্রতিষ্ঠান বা পণ্যের বিজ্ঞাপন দিন।',
-                imagePath: 'assets/images/feniCity.png',
-                text:
-                    """ফেনীর সকল প্রিয় নাগরিকদের জানাই আন্তরিক শুভেচ্ছা। যারা তাদের ব্যবসা বা প্রতিষ্ঠানের প্রসার ও প্রচারের কথা ভাবছেন, তাদের জন্য একটি দুর্দান্ত সুযোগ নিয়ে এসেছে ফেনী সিটি অ্যাপ। ডিজিটাল মার্কেটিং এর আধুনিক সুবিধার মাধ্যমে আপনি সহজেই আপনার পণ্য বা প্রতিষ্ঠানের ব্র্যান্ডকে মানুষের কাছে পরিচিত করতে পারেন এবং আস্থা তৈরি করতে পারেন।
-                    
-কেন ডিজিটাল মার্কেটিং?
-প্রচারই প্রসারের মূল চাবিকাঠি। বিজ্ঞাপনের মাধ্যমে আপনার ব্যবসা বা সেবার তথ্য আরো বেশি মানুষের কাছে পৌঁছে যাবে, যা আপনার প্রতিষ্ঠানকে এগিয়ে নিয়ে যাবে। ফেনী সিটি অ্যাপের মাধ্যমে আপনি আপনার প্রতিষ্ঠানের বিজ্ঞাপন দিতে পারবেন, যা মানুষের নজরে আসার একটি আধুনিক ও কার্যকর পদ্ধতি।
-
-বিজ্ঞাপনের সুযোগ সুবিধা:
-ফেনী সিটি অ্যাপে বিজ্ঞাপন দিয়ে আপনি যেকোনো ধরনের ব্যবসার প্রসার ঘটাতে পারবেন। যেমন:
-হাসপাতাল বা ক্লিনিক, ডায়াগনস্টিক সেন্টার, রেস্তোরাঁ বা ক্যাফে, দোকান বা শোরুম, ই-কমার্স এবং অন্যান্য যেকোনো ধরনের ব্যবসা।
-
-কীভাবে যোগাযোগ করবেন?
-আপনার প্রতিষ্ঠানকে ডিজিটালভাবে তুলে ধরতে এবং বিজ্ঞাপনের মাধ্যমে পরিচিতি বাড়াতে আমাদের সাথে আজই যোগাযোগ করুন। আমরা নিশ্চিত করব আপনার বিজ্ঞাপন সর্বোচ্চ সংখ্যক মানুষের কাছে পৌঁছায়।
-
-ফেনীর মানুষের জন্য সেরা সুযোগগুলো কাজে লাগান এবং আপনার ব্যবসাকে আরও এক ধাপ এগিয়ে নিয়ে যান!
-
-যোগাযোগ করুন:
-আমাদের টিম সর্বদা আপনার সহায়তায় প্রস্তুত। বিস্তারিত জানতে এখনই যোগাযোগ করুন।
-
-আসুন, ফেনী সিটি অ্যাপের মাধ্যমে আপনার ব্যবসার সফলতা নিশ্চিত করি!
-""",
+              const SizedBox(height: 8),
+              Container(
+                padding: const EdgeInsets.all(10),
+                margin:  const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: ColorRes.primaryColor.withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: ColorRes.primaryColor, width: .3),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ContactDetailsWidget(
+                          name: "Kalti Engineering",
+                          address: "House#40/41, Road#02, Janata Co-Operative Housing Society Ltd, Adabor, Dhaka-1207, Bangladesh.",
+                          email: "info@kaltiEngineering.com",
+                          phone: "+88 01822 25 82 55",
+                          call: "Call",
+                          sms: "SMS",
+                          mail: "e-Mail",
+                          map: "Map",
+                          onTap: () {},
+                        ),
+                  ],
+                ),
               ),
+              GlobalText(
+                str: "Social Media",
+                color: ColorRes.primaryColor,
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 8),
+
+              GridView.builder(
+                  itemCount: menuItem.length,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 8,
+                      crossAxisSpacing: 8,
+                      mainAxisExtent: 50),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  itemBuilder: (ctx, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        switch (index) {
+                          case 0:
+                            Get.to(() => const FacebookScreen());
+                            break;
+                          case 1:
+                            Get.to(() => const LinkedInScreen());
+                            break;
+                          case 2:
+                            Get.to(() => const InstagramScreen());
+                            break;
+                          case 3:
+                            Get.to(() => const ThreadsScreen());
+                            break;
+                          case 4:
+                            Get.to(() => const TwitterScreen());
+                            break;
+                          case 5:
+                            Get.to(() => const TikTokScreen());
+                            break;
+                          case 6:
+                            Get.to(() => const YouTubeScreen());
+                            break;
+                          case 7:
+                            Get.to(() => const VimeoScreen());
+                            break;
+                          case 8:
+                            Get.to(() => const PinterestScreen());
+                            break;
+                          case 9:
+                            Get.to(() => const TumblrScreen());
+                            break;
+                          case 10:
+                            Get.to(() => const WhatsAppScreen());
+                            break;
+                          case 11:
+                            Get.to(() => const TelegramScreen());
+                            break;
+                          case 12:
+                            Get.to(() => const WeChatScreen());
+                            break;
+                        }
+                      },
+                      child: SocialMediaWidget(
+                        height: 24,
+                        width: 24,
+                        imagePath: menuItem[index].img,
+                        text: menuItem[index].text,
+                      ),
+                    );
+                  }),
+
+              //const SizedBox(height: 10),
             ],
           ),
         ),

@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:kalti/views/home_screen.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import '../../global/widget/custom_app_bar.dart';
-import '../../global/widget/custom_bottom_navigation_bar.dart';
 import '../../global/widget/global_app_bar.dart';
 
 class FacebookScreen extends StatefulWidget {
