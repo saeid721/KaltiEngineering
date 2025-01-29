@@ -39,7 +39,7 @@ class _InstagramScreenState extends State<InstagramScreen> {
         },
       ))
       ..loadRequest(
-        Uri.parse('https://www.instagram.com/kaltiengineering'),
+        Uri.parse('https://www.instagram.com/kaltiengineering/'),
       );
   }
 

@@ -20,22 +20,23 @@ class Images {
   //::::::::::::::::::::::::: All Logo Img
   static const String appLogo = 'assets/images/logo.png';
 
-  static const String facebookInc = 'assets/images/Facebook_logo.png';
-  static const String tikTokInc = 'assets/images/Facebook_logo.png';
-  static const String instagramInc = 'assets/images/Facebook_logo.png';
-  static const String linkedInInc = 'assets/images/Facebook_logo.png';
-  static const String threadsInc = 'assets/images/Facebook_logo.png';
-  static const String vimeoInc = 'assets/images/Facebook_logo.png';
-  static const String pinterestInc = 'assets/images/Facebook_logo.png';
-  static const String twitterInc = 'assets/images/Facebook_logo.png';
-  static const String youTubeInc = 'assets/images/Facebook_logo.png';
-  static const String telegramInc = 'assets/images/Facebook_logo.png';
-  static const String whatsAppInc = 'assets/images/Facebook_logo.png';
-  static const String snapchatInc = 'assets/images/Facebook_logo.png';
-  static const String qqInc = 'assets/images/Facebook_logo.png';
-  static const String weChatInc = 'assets/images/Facebook_logo.png';
-  static const String redditInc = 'assets/images/Facebook_logo.png';
-  static const String quoraInc = 'assets/images/Facebook_logo.png';
-  static const String tumblrInc = 'assets/images/Facebook_logo.png';
+  static const String facebookInc = 'assets/icons/facebook.png';
+  static const String tikTokInc = 'assets/icons/tiktok.png';
+  static const String instagramInc = 'assets/icons/instagram.png';
+  static const String linkedInInc = 'assets/icons/linkedin.png';
+  static const String threadsInc = 'assets/icons/threads.png';
+  static const String vimeoInc = 'assets/icons/vimeo.png';
+  static const String pinterestInc = 'assets/icons/pinterest.png';
+  static const String twitterInc = 'assets/icons/twitter.png';
+  static const String youTubeInc = 'assets/icons/youtube.png';
+  static const String whatsAppInc = 'assets/icons/whatsapp.png';
+  static const String telegramInc = 'assets/icons/telegram.png';
+  static const String weChatInc = 'assets/icons/wechat.png';
+  static const String tumblrInc = 'assets/icons/tumblr.png';
+  static const String bloggerInc = 'assets/icons/blogger.png';
+  static const String redditInc = 'assets/icons/reddit.png';
+  static const String googleInc = 'assets/icons/google.png';
+  static const String quoraInc = 'assets/icons/quora.png';
+  static const String snapchatInc = 'assets/icons/snapchat.png';
 
 }

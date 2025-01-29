@@ -8,32 +8,19 @@ import '../global/model.dart';
 import '../global/widget/global_app_bar.dart';
 import '../global/widget/global_container.dart';
 import '../global/widget/home_menu_widget.dart';
-import 'about_screen.dart';
-import 'blog_screen.dart';
-import 'contact_screen/contact_screen.dart';
-import 'faq_screen.dart';
-import 'gallery_screen.dart';
-import 'kalti_home_screen.dart';
-import 'privacy_policy_screen.dart';
-import 'service_screen.dart';
-import 'solution_screen.dart';
-import 'social_media_screen/linkedin_screen.dart';
-import 'social_media_screen/pinterest_screen.dart';
-import 'social_media_screen/telegram_screen.dart';
-import 'social_media_screen/threads_screen.dart';
-import 'social_media_screen/twitter_screen.dart';
-import 'social_media_screen/vimeo_screen.dart';
-import 'social_media_screen/tiktok_screen.dart';
-import 'social_media_screen/instagram_screen.dart';
-import 'social_media_screen/tumblr_screen.dart';
-import 'social_media_screen/facebook_screen.dart';
-import 'social_media_screen/toutube_thumbnail_screen.dart';
-import 'product_screen.dart';
-import 'social_media_screen/we_chat_screen.dart';
-import 'social_media_screen/whatsapp_screen.dart';
-import 'social_media_screen/youtube_screen.dart';
-import 'trams_condition_screen.dart';
-import 'video_screen.dart';
+import 'service_screen/construction_chemicals_screen.dart';
+import 'service_screen/damp_proofing_screen.dart';
+import 'service_screen/epoxy_floor_screen.dart';
+import 'service_screen/etp_protective_coating_screen.dart';
+import 'service_screen/expansion_joint_screen.dart';
+import 'service_screen/fair_face_plaster_screen.dart';
+import 'service_screen/floor_hardener_screen.dart';
+import 'service_screen/kalti_home_screen.dart';
+import 'service_screen/polished_concrete_screen.dart';
+import 'service_screen/pu_floor_screen.dart';
+import 'service_screen/three_d_epoxy_screen.dart';
+import 'service_screen/vinyl_floor_screen.dart';
+import 'service_screen/waterproofing_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -47,31 +34,19 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<GlobalMenuModel> menuItem = [
     GlobalMenuModel(img: Images.homeInc, text: 'Home'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Solution'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Service'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Product'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Video'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Gallery'),
-    GlobalMenuModel(img: Images.appLogo, text: 'About Us'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Contact Us'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Blog'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Term & Conditions'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Privacy & Policy'),
-    GlobalMenuModel(img: Images.appLogo, text: 'FAQ'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Fair Face Plaster'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Vinyl Flooring Solution'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Epoxy Flooring Solution'),
+    GlobalMenuModel(img: Images.appLogo, text: 'PU Flooring Solution'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Floor Hardener Solution'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Polished Concrete'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Waterproofing Solution'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Damp Proofing Solution'),
+    GlobalMenuModel(img: Images.appLogo, text: '3D Epoxy Flooring Solution'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Expansion Joint Sealant'),
+    GlobalMenuModel(img: Images.appLogo, text: 'ETP Protective Coating'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Construction Chemicals'),
 
-    // GlobalMenuModel(img: Images.whatsAppInc, text: 'WhatsApp'),
-    // GlobalMenuModel(img: Images.telegramInc, text: 'Telegram'),
-    // GlobalMenuModel(img: Images.facebookInc, text: 'Facebook'),
-    // GlobalMenuModel(img: Images.linkedInInc, text: 'Linkedin'),
-    // GlobalMenuModel(img: Images.instagramInc, text: 'Instagram'),
-    // GlobalMenuModel(img: Images.threadsInc, text: 'Threads'),
-    // GlobalMenuModel(img: Images.twitterInc, text: 'Twitter'),
-    // GlobalMenuModel(img: Images.tikTokInc, text: 'TikTok'),
-    // GlobalMenuModel(img: Images.youTubeInc, text: 'YouTube'),
-    // GlobalMenuModel(img: Images.vimeoInc, text: 'Vimeo'),
-    // GlobalMenuModel(img: Images.pinterestInc, text: 'Pinterest'),
-    // GlobalMenuModel(img: Images.tumblrInc, text: 'Tumblr'),
-    // GlobalMenuModel(img: Images.weChatInc, text: 'WeChat'),
   ];
 
   int currentIndex = 0;
@@ -184,83 +159,41 @@ class _HomeScreenState extends State<HomeScreen> {
                             Get.to(() => const KaltiHomeScreen());
                             break;
                           case 1:
-                            Get.to(() => const SolutionScreen());
+                            Get.to(() => const FairFacePlasterScreen());
                             break;
                           case 2:
-                            Get.to(() => const ServiceScreen());
+                            Get.to(() => const VinylFlooringScreen());
                             break;
                           case 3:
-                            Get.to(() => const ProductScreen());
+                            Get.to(() => const EpoxyFlooringScreen());
                             break;
                           case 4:
-                            Get.to(() => const VideoScreen());
+                            Get.to(() => const PuFlooringScreen());
                             break;
                           case 5:
-                            Get.to(() => const GalleryScreen());
+                            Get.to(() => const FloorHardenerScreen());
                             break;
                           case 6:
-                            Get.to(() => const AboutScreen());
+                            Get.to(() => const PolishedConcreteScreen());
                             break;
                           case 7:
-                            Get.to(() => const ContactScreen());
+                            Get.to(() => const WaterproofingScreen());
                             break;
                           case 8:
-                            Get.to(() => const BlogScreen());
+                            Get.to(() => const DampProofingScreen());
                             break;
                           case 9:
-                            Get.to(() => const TramsConditionScreen());
+                            Get.to(() => const ThreeDEpoxyFlooringScreen());
                             break;
                           case 10:
-                            Get.to(() => const PrivacyPolicyScreen());
+                            Get.to(() => const ExpansionJointSealantScreen());
                             break;
                           case 11:
-                            Get.to(() => const FaqScreen());
+                            Get.to(() => const EtpProtectiveCoatingScreen());
                             break;
-                          // case 12:
-                          //   Get.to(() => const FacebookScreen());
-                          //   break;
-                          // case 13:
-                          //   Get.to(() => const TikTokScreen());
-                          //   break;
-                          // case 14:
-                          //   Get.to(() => const InstagramScreen());
-                          //   break;
-                          // case 15:
-                          //   Get.to(() => const LinkedInScreen());
-                          //   break;
-                          // case 16:
-                          //   Get.to(() => const ThreadsScreen());
-                          //   break;
-                          // case 17:
-                          //   Get.to(() => const TwitterScreen());
-                          //   break;
-                          // case 18:
-                          //   Get.to(() => const YouTubeScreen());
-                          //   break;
-                          // case 19:
-                          //   Get.to(() => const YouTubeThumbnailScreen());
-                          //   break;
-                          // case 20:
-                          //   Get.to(() => const VimeoScreen());
-                          //   break;
-                          // case 21:
-                          //   Get.to(() => const PinterestScreen());
-                          //   break;
-                          // case 22:
-                          //   Get.to(() => const ProductScreen());
-                          //   break;
-                          // case 23:
-                          //   Get.to(() => const TumblrScreen());
-                          //   break;
-                          // case 24:
-                          //   Get.to(() => const TelegramScreen());
-                          //   break;
-                          // case 25:
-                          //   Get.to(() => const WhatsAppScreen());
-                          //   break;
-                          // case 26:
-                          //   Get.to(() => const WeChatScreen());
-                          //   break;
+                          case 12:
+                            Get.to(() => const ConstructionChemicalsScreen());
+                            break;
                         }
                       },
                       child: HomeMenuWidget(

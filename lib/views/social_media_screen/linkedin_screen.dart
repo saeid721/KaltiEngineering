@@ -35,7 +35,7 @@ class _LinkedInScreenState extends State<LinkedInScreen> {
         },
       ))
       ..loadRequest(
-        Uri.parse('https://www.linkedin.com/company/kaltiengineeringbd'),
+        Uri.parse('https://www.linkedin.com/company/kaltiengineering/'),
       );
   }
 

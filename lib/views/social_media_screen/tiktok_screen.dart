@@ -35,7 +35,7 @@ class _TikTokScreenState extends State<TikTokScreen> {
         },
       ))
       ..loadRequest(
-        Uri.parse('https://snaptik.app/en2'),
+        Uri.parse('https://www.tiktok.com/@kaltiengineering'),
       );
   }
 

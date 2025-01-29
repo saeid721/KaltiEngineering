@@ -2,23 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import '../../global/widget/global_app_bar.dart';
 
-class VimeoScreen extends StatefulWidget {
-  const VimeoScreen({super.key});
+class GoogleScreen extends StatefulWidget {
+  const GoogleScreen({super.key});
 
   @override
-  State<VimeoScreen> createState() => _VimeoScreenState();
+  State<GoogleScreen> createState() => _GoogleScreenState();
 }
 
-class _VimeoScreenState extends State<VimeoScreen> {
+class _GoogleScreenState extends State<GoogleScreen> {
   late WebViewController controller;
   var loadingPercentage = 0;
 
   @override
   void initState() {
     super.initState();
-    // Configure WebViewController with JavaScript enabled
     controller = WebViewController()
-      ..setJavaScriptMode(JavaScriptMode.unrestricted) // Enable JavaScript
       ..setNavigationDelegate(NavigationDelegate(
         onPageStarted: (url) {
           setState(() {
@@ -37,7 +35,7 @@ class _VimeoScreenState extends State<VimeoScreen> {
         },
       ))
       ..loadRequest(
-        Uri.parse('https://www.vimeo.com/kaltiengineering/'),
+        Uri.parse('https://g.co/kgs/6bsVznX'),
       );
   }
 
@@ -48,7 +46,7 @@ class _VimeoScreenState extends State<VimeoScreen> {
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(60),
         child: GlobalAppBar(
-          title: 'Vimeo',
+          title: 'Facebook',
         ),
       ),
       body: Stack(

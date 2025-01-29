@@ -35,7 +35,7 @@ class _ThreadsScreenState extends State<ThreadsScreen> {
         },
       ))
       ..loadRequest(
-        Uri.parse('https://www.threads.net/@kaltiengineering'),
+        Uri.parse('https://www.threads.net/@kaltiengineering/'),
       );
   }
 

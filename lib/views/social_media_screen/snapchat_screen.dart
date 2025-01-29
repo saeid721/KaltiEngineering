@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
         },
       ))
       ..loadRequest(
-        Uri.parse('https://getindevice.com/snapchat-video-downloader/'),
+        Uri.parse('https://www.snapchat.com/kaltiengineering/'),
       );
   }
 

@@ -35,7 +35,7 @@ class _TumblrScreenState extends State<TumblrScreen> {
         },
       ))
       ..loadRequest(
-        Uri.parse('https://www.tumblr.com/kaltiengineering'),
+        Uri.parse('https://www.tumblr.com/kaltiengineering/'),
       );
   }
 

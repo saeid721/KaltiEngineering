@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import '../../global/widget/global_app_bar.dart';
 
-class YouTubeThumbnailScreen extends StatefulWidget {
-  const YouTubeThumbnailScreen({super.key});
+class BloggerScreen extends StatefulWidget {
+  const BloggerScreen({super.key});
 
   @override
-  State<YouTubeThumbnailScreen> createState() => _YouTubeThumbnailScreenState();
+  State<BloggerScreen> createState() => _BloggerScreenState();
 }
 
-class _YouTubeThumbnailScreenState extends State<YouTubeThumbnailScreen> {
+class _BloggerScreenState extends State<BloggerScreen> {
   late WebViewController controller;
   var loadingPercentage = 0;
 
@@ -35,10 +35,9 @@ class _YouTubeThumbnailScreenState extends State<YouTubeThumbnailScreen> {
         },
       ))
       ..loadRequest(
-        Uri.parse('https://youtube-thumbnail-grabber.com/'),
+        Uri.parse('https://www.blogger.com/kaltiengineering/'),
       );
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +46,7 @@ class _YouTubeThumbnailScreenState extends State<YouTubeThumbnailScreen> {
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(60),
         child: GlobalAppBar(
-          title: 'YouTube Thumbnail',
+          title: 'Blogger',
         ),
       ),
       body: Stack(
@@ -57,9 +56,9 @@ class _YouTubeThumbnailScreenState extends State<YouTubeThumbnailScreen> {
           ),
           loadingPercentage < 100
               ? LinearProgressIndicator(
-            color: Colors.red,
-            value: loadingPercentage / 100.0,
-          )
+                  color: Colors.red,
+                  value: loadingPercentage / 100.0,
+                )
               : Container(),
         ],
       ),

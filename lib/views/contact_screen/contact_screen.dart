@@ -6,10 +6,13 @@ import '../../global/constants/images.dart';
 import '../../global/model.dart';
 import '../../global/widget/global_app_bar.dart';
 import '../../global/widget/global_text.dart';
+import '../social_media_screen/blogger_screen.dart';
 import '../social_media_screen/facebook_screen.dart';
+import '../social_media_screen/google_screen.dart';
 import '../social_media_screen/instagram_screen.dart';
 import '../social_media_screen/linkedin_screen.dart';
 import '../social_media_screen/pinterest_screen.dart';
+import '../social_media_screen/reddit_screen.dart';
 import '../social_media_screen/telegram_screen.dart';
 import '../social_media_screen/threads_screen.dart';
 import '../social_media_screen/tiktok_screen.dart';
@@ -43,9 +46,12 @@ class _ContactScreenState extends State<ContactScreen> {
     GlobalMenuModel(img: Images.vimeoInc, text: 'Vimeo'),
     GlobalMenuModel(img: Images.pinterestInc, text: 'Pinterest'),
     GlobalMenuModel(img: Images.tumblrInc, text: 'Tumblr'),
-    GlobalMenuModel(img: Images.whatsAppInc, text: 'WhatsApp'),
-    GlobalMenuModel(img: Images.telegramInc, text: 'Telegram'),
-    GlobalMenuModel(img: Images.weChatInc, text: 'WeChat'),
+    GlobalMenuModel(img: Images.googleInc, text: 'Business'),
+    GlobalMenuModel(img: Images.bloggerInc, text: 'Blogger'),
+    //GlobalMenuModel(img: Images.redditInc, text: 'Reddit'),
+    // GlobalMenuModel(img: Images.whatsAppInc, text: 'WhatsApp'),
+    // GlobalMenuModel(img: Images.telegramInc, text: 'Telegram'),
+    // GlobalMenuModel(img: Images.weChatInc, text: 'WeChat'),
   ];
 
   @override
@@ -157,14 +163,23 @@ class _ContactScreenState extends State<ContactScreen> {
                             Get.to(() => const TumblrScreen());
                             break;
                           case 10:
-                            Get.to(() => const WhatsAppScreen());
+                            Get.to(() => const GoogleScreen());
                             break;
                           case 11:
-                            Get.to(() => const TelegramScreen());
+                            Get.to(() => const BloggerScreen());
                             break;
-                          case 12:
-                            Get.to(() => const WeChatScreen());
-                            break;
+                          // case 10:
+                          //   Get.to(() => const RedditScreen());
+                          //   break;
+                          // case 10:
+                          //   Get.to(() => const WhatsAppScreen());
+                          //   break;
+                          // case 11:
+                          //   Get.to(() => const TelegramScreen());
+                          //   break;
+                          // case 12:
+                          //   Get.to(() => const WeChatScreen());
+                          //   break;
                         }
                       },
                       child: SocialMediaWidget(

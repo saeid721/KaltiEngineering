@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:provider/provider.dart'; // Import provider package
-import '../controller/controller.dart';
-import '../global/widget/global_app_bar.dart';
-import '../global/widget/global_progress_hub.dart';
+import '../../controller/controller.dart';
+import '../../global/widget/global_app_bar.dart';
+import '../../global/widget/global_progress_hub.dart';
 
-class KaltiHomeScreen extends StatefulWidget {
-  const KaltiHomeScreen({super.key});
+class PuFlooringScreen extends StatefulWidget {
+  const PuFlooringScreen({super.key});
 
   @override
-  State<KaltiHomeScreen> createState() => _KaltiHomeScreenState();
+  State<PuFlooringScreen> createState() => _PuFlooringScreenState();
 }
 
-class _KaltiHomeScreenState extends State<KaltiHomeScreen> {
+class _PuFlooringScreenState extends State<PuFlooringScreen> {
   late final WebViewController controller;
   var loadingPercentage = 0;
 
@@ -68,7 +68,7 @@ class _KaltiHomeScreenState extends State<KaltiHomeScreen> {
           return NavigationDecision.navigate;
         },
       ))
-      ..loadRequest(Uri.parse('https://kaltiengineering.com/'));
+      ..loadRequest(Uri.parse('https://kaltiengineering.com/pu-flooring-in-bangladesh/'));
   }
 
   @override
@@ -78,7 +78,7 @@ class _KaltiHomeScreenState extends State<KaltiHomeScreen> {
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(60),
         child: GlobalAppBar(
-          title: 'Kalti Engineering',
+          title: 'PU Flooring Solution',
         ),
       ),
       body: Consumer<WebViewLoadingController>(builder: (context, loadingController, child) {

@@ -52,7 +52,7 @@ class SocialMediaWidget extends StatelessWidget {
           const SizedBox(width: 5),
           GlobalText(
             str: text,
-            color: ColorRes.primaryColor,
+            color: ColorRes.textColor,
             fontSize: 18,
             fontWeight: FontWeight.w500,
             overflow: TextOverflow.ellipsis,

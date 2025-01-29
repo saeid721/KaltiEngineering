@@ -35,7 +35,7 @@ class _TwitterScreenState extends State<TwitterScreen> {
         },
       ))
       ..loadRequest(
-        Uri.parse('https://x.com/KaltiEngineer'),
+        Uri.parse('https://x.com/kaltiengineer/'),
       );
   }
 

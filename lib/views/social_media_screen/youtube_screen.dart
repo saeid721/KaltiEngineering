@@ -35,7 +35,7 @@ class _YouTubeScreenState extends State<YouTubeScreen> {
         },
       ))
       ..loadRequest(
-        Uri.parse('https://www.youtube.com/@kaltiengineering'),
+        Uri.parse('https://www.youtube.com/@kaltiengineering/'),
       );
   }
 
