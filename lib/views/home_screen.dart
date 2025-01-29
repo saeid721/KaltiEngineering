@@ -19,7 +19,6 @@ import 'service_screen.dart';
 import 'solution_screen.dart';
 import 'social_media_screen/linkedin_screen.dart';
 import 'social_media_screen/pinterest_screen.dart';
-import 'social_media_screen/snapchat_screen.dart';
 import 'social_media_screen/telegram_screen.dart';
 import 'social_media_screen/threads_screen.dart';
 import 'social_media_screen/twitter_screen.dart';
@@ -48,17 +47,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<GlobalMenuModel> menuItem = [
     GlobalMenuModel(img: Images.homeInc, text: 'Home'),
-    GlobalMenuModel(img: Images.tikTokInc, text: 'Solution'),
-    GlobalMenuModel(img: Images.instagramInc, text: 'Service'),
-    GlobalMenuModel(img: Images.linkedInInc, text: 'Product'),
-    GlobalMenuModel(img: Images.threadsInc, text: 'Video'),
-    GlobalMenuModel(img: Images.threadsInc, text: 'Gallery'),
-    GlobalMenuModel(img: Images.twitterInc, text: 'About Us'),
-    GlobalMenuModel(img: Images.contactInc, text: 'Contact Us'),
-    GlobalMenuModel(img: Images.youTubeInc, text: 'Blog'),
-    GlobalMenuModel(img: Images.vimeoInc, text: 'Term & Conditions'),
-    GlobalMenuModel(img: Images.privacyPolicy, text: 'Privacy & Policy'),
-    GlobalMenuModel(img: Images.redditInc, text: 'FAQ'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Solution'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Service'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Product'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Video'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Gallery'),
+    GlobalMenuModel(img: Images.appLogo, text: 'About Us'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Contact Us'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Blog'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Term & Conditions'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Privacy & Policy'),
+    GlobalMenuModel(img: Images.appLogo, text: 'FAQ'),
 
     GlobalMenuModel(img: Images.whatsAppInc, text: 'WhatsApp'),
     GlobalMenuModel(img: Images.telegramInc, text: 'Telegram'),
