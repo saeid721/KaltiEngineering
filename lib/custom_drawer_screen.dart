@@ -9,11 +9,19 @@ import '../../../../../global/widget/global_image_loader.dart';
 import '../../../../../global/widget/global_text.dart';
 import '../global/constants/colors_resources.dart';
 import 'global/constants/enum.dart';
+import 'views/about_screen.dart';
+import 'views/blog_screen.dart';
 import 'views/contact_screen/contact_screen.dart';
+import 'views/faq_screen.dart';
+import 'views/gallery_screen.dart';
 import 'views/home_screen.dart';
 import 'views/notification_screen/notification_screen.dart';
+import 'views/privacy_policy_screen.dart';
 import 'views/privacy_policy_screen/privacy_policy_screen.dart';
-import 'views/profile_screen/profile_screen.dart';
+import 'views/product_screen.dart';
+import 'views/service_screen.dart';
+import 'views/trams_condition_screen.dart';
+import 'views/video_screen.dart';
 
 class CustomDrawerScreen extends StatefulWidget {
   const CustomDrawerScreen({super.key});
@@ -25,13 +33,22 @@ class CustomDrawerScreen extends StatefulWidget {
 class _CustomDrawerScreenState extends State<CustomDrawerScreen> {
   int isClick = 0;
   List<GlobalMenuModel> menuItem = [
-    GlobalMenuModel(img: Images.homeInc, text: 'হোম'),
-    GlobalMenuModel(img: Images.contactInc, text: 'যোগাযোগ'),
-    // GlobalMenuModel(img: Images.userInc, text: 'প্রোফাইল'),
-    GlobalMenuModel(img: Images.notificationInc, text: 'নোটিফিকেশন'),
-    GlobalMenuModel(img: Images.share, text: 'শেয়ার করুন'),
-    GlobalMenuModel(img: Images.rating, text: 'রেটিং দিন'),
-    GlobalMenuModel(img: Images.privacyPolicy, text: 'গোপনীয়তা নীতি'),
+    GlobalMenuModel(img: Images.homeInc, text: 'Home'),
+    GlobalMenuModel(img: Images.contactInc, text: 'Contact'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Energy Services'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Products'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Videos'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Gallery'),
+    GlobalMenuModel(img: Images.appLogo, text: 'About Us'),
+    //GlobalMenuModel(img: Images.appLogo, text: 'Contact Us'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Blog'),
+    GlobalMenuModel(img: Images.appLogo, text: 'FAQ'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Term & Conditions'),
+    GlobalMenuModel(img: Images.appLogo, text: 'Privacy & Policy'),
+    GlobalMenuModel(img: Images.notificationInc, text: 'Notification'),
+    GlobalMenuModel(img: Images.share, text: 'Share'),
+    GlobalMenuModel(img: Images.rating, text: 'Rating'),
+    GlobalMenuModel(img: Images.privacyPolicy, text: 'Privacy of App'),
   ];
 
   // Function to handle app share
@@ -53,12 +70,12 @@ class _CustomDrawerScreenState extends State<CustomDrawerScreen> {
               width: Get.width,
               color: ColorRes.borderColor,
               padding: const EdgeInsets.only(
-                  left: 20, right: 10, top: 60, bottom: 20),
+                  left: 20, right: 10, top: 50, bottom: 10),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: GlobalImageLoader(
                   imagePath: 'assets/images/logo.png',
-                  width: 250,
+                  width: 220,
                   imageFor: ImageFor.asset,
                 ),
               ),
@@ -85,27 +102,51 @@ class _CustomDrawerScreenState extends State<CustomDrawerScreen> {
                               Get.to(() => const ContactScreen());
                               break;
                             case 2:
-                              Get.to(() => const NotificationScreen());
+                              Get.to(() => const ServiceScreen());
                               break;
                             case 3:
-                              _shareApp(); // Trigger share app function
+                              Get.to(() => const ProductScreen());
                               break;
                             case 4:
-                              // Add any action for Rating here
+                              Get.to(() => const VideoScreen());
                               break;
                             case 5:
-                              Get.to(() => const PrivacyPolicyScreen());
+                              Get.to(() => const GalleryScreen());
                               break;
                             case 6:
-                              Get.to(() => const ProfileScreen());
+                              Get.to(() => const AboutScreen());
+                              break;
+                            case 7:
+                              Get.to(() => const BlogScreen());
+                              break;
+                            case 8:
+                              Get.to(() => const FaqScreen());
+                              break;
+                            case 9:
+                              Get.to(() => const TramsConditionScreen());
+                              break;
+                            case 10:
+                              Get.to(() => const PrivacyPolicyScreen());
+                              break;
+                            case 11:
+                              Get.to(() => const NotificationScreen());
+                              break;
+                            case 12:
+                              _shareApp(); // Trigger share app function
+                              break;
+                            case 13:
+                            // Add any action for Rating here
+                              break;
+                            case 14:
+                              Get.to(() => const AppPrivacyPolicyScreen());
                               break;
                           }
                         },
                         child: Container(
                           width: Get.width,
-                          margin: const EdgeInsets.only(bottom: 5),
+                          //margin: const EdgeInsets.only(bottom: 5),
                           padding: const EdgeInsets.symmetric(
-                              vertical: 14, horizontal: 10),
+                              vertical: 8, horizontal: 8),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
                             color: isClick == index

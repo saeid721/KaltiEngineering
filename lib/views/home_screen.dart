@@ -216,42 +216,42 @@ class _HomeScreenState extends State<HomeScreen> {
                           case 11:
                             Get.to(() => const FaqScreen());
                             break;
-                          case 12:
-                            Get.to(() => const FacebookScreen());
-                            break;
-                          case 13:
-                            Get.to(() => const TikTokScreen());
-                            break;
-                          case 14:
-                            Get.to(() => const InstagramScreen());
-                            break;
-                          case 15:
-                            Get.to(() => const LinkedInScreen());
-                            break;
-                          case 16:
-                            Get.to(() => const ThreadsScreen());
-                            break;
-                          case 17:
-                            Get.to(() => const TwitterScreen());
-                            break;
-                          case 18:
-                            Get.to(() => const YouTubeScreen());
-                            break;
-                          case 19:
-                            Get.to(() => const YouTubeThumbnailScreen());
-                            break;
-                          case 20:
-                            Get.to(() => const VimeoScreen());
-                            break;
-                          case 21:
-                            Get.to(() => const PinterestScreen());
-                            break;
-                          case 22:
-                            Get.to(() => const ProductScreen());
-                            break;
-                          case 23:
-                            Get.to(() => const TumblrScreen());
-                            break;
+                          // case 12:
+                          //   Get.to(() => const FacebookScreen());
+                          //   break;
+                          // case 13:
+                          //   Get.to(() => const TikTokScreen());
+                          //   break;
+                          // case 14:
+                          //   Get.to(() => const InstagramScreen());
+                          //   break;
+                          // case 15:
+                          //   Get.to(() => const LinkedInScreen());
+                          //   break;
+                          // case 16:
+                          //   Get.to(() => const ThreadsScreen());
+                          //   break;
+                          // case 17:
+                          //   Get.to(() => const TwitterScreen());
+                          //   break;
+                          // case 18:
+                          //   Get.to(() => const YouTubeScreen());
+                          //   break;
+                          // case 19:
+                          //   Get.to(() => const YouTubeThumbnailScreen());
+                          //   break;
+                          // case 20:
+                          //   Get.to(() => const VimeoScreen());
+                          //   break;
+                          // case 21:
+                          //   Get.to(() => const PinterestScreen());
+                          //   break;
+                          // case 22:
+                          //   Get.to(() => const ProductScreen());
+                          //   break;
+                          // case 23:
+                          //   Get.to(() => const TumblrScreen());
+                          //   break;
                           // case 24:
                           //   Get.to(() => const TelegramScreen());
                           //   break;

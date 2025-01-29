@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import '../../global/widget/global_app_bar.dart';
 import 'components/privacy_policy_widget.dart';
 
-class PrivacyPolicyScreen extends StatefulWidget {
-  const PrivacyPolicyScreen({super.key});
+class AppPrivacyPolicyScreen extends StatefulWidget {
+  const AppPrivacyPolicyScreen({super.key});
 
   @override
-  State<PrivacyPolicyScreen> createState() => _PrivacyPolicyScreenState();
+  State<AppPrivacyPolicyScreen> createState() => _AppPrivacyPolicyScreenState();
 }
 
-class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
+class _AppPrivacyPolicyScreenState extends State<AppPrivacyPolicyScreen> {
   final GlobalKey<ScaffoldState> drawerKey = GlobalKey<ScaffoldState>();
 
   @override
