@@ -36,7 +36,7 @@ class _BloggerScreenState extends State<BloggerScreen> {
     } else {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Could not open Instagram.')),
+          const SnackBar(content: Text('Could not open Blogger.')),
         );
       }
     }

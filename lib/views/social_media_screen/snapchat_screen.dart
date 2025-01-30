@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
     } else {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Could not open Instagram.')),
+          const SnackBar(content: Text('Could not open SnapChat.')),
         );
       }
     }

@@ -37,7 +37,7 @@ class _WeChatScreenState extends State<WeChatScreen> {
     } else {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Could not open Instagram.')),
+          const SnackBar(content: Text('Could not open weChat.')),
         );
       }
     }

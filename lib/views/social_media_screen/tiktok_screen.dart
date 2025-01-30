@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:webview_flutter/webview_flutter.dart';
-import '../../global/widget/global_app_bar.dart';
 
 class TikTokScreen extends StatefulWidget {
   const TikTokScreen({super.key});
@@ -38,7 +36,7 @@ class _TikTokScreenState extends State<TikTokScreen> {
     } else {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Could not open Instagram.')),
+          const SnackBar(content: Text('Could not open TikTok.')),
         );
       }
     }

@@ -36,7 +36,7 @@ class _YouTubeScreenState extends State<YouTubeScreen> {
     } else {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Could not open Instagram.')),
+          const SnackBar(content: Text('Could not open YouTube.')),
         );
       }
     }
