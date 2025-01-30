@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import '../../global/widget/global_app_bar.dart';
 
@@ -10,58 +11,44 @@ class TikTokScreen extends StatefulWidget {
 }
 
 class _TikTokScreenState extends State<TikTokScreen> {
-  late WebViewController controller;
-  var loadingPercentage = 0;
-
   @override
   void initState() {
     super.initState();
-    controller = WebViewController()
-      ..setNavigationDelegate(NavigationDelegate(
-        onPageStarted: (url) {
-          setState(() {
-            loadingPercentage = 0;
-          });
-        },
-        onProgress: (progress) {
-          setState(() {
-            loadingPercentage = progress;
-          });
-        },
-        onPageFinished: (url) {
-          setState(() {
-            loadingPercentage = 100;
-          });
-        },
-      ))
-      ..loadRequest(
-        Uri.parse('https://www.tiktok.com/@kaltiengineering'),
-      );
+    // Adding a small delay before launching Instagram
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Future.delayed(const Duration(milliseconds: 500), _launchInstagram);
+    });
+  }
+
+  Future<void> _launchInstagram() async {
+    final Uri url = Uri.parse('https://www.tiktok.com/@kaltiengineering');
+
+    if (await canLaunchUrl(url)) {
+      // Launch Instagram externally
+      await launchUrl(url, mode: LaunchMode.externalApplication);
+
+      // Add delay before popping the screen
+      if (mounted) {
+        Future.delayed(const Duration(milliseconds: 700), () {
+          if (mounted) {
+            Navigator.pop(context); // Close the current screen
+          }
+        });
+      }
+    } else {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Could not open Instagram.')),
+        );
+      }
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.white,
-      // appBar: const PreferredSize(
-      //   preferredSize: Size.fromHeight(60),
-      //   child: GlobalAppBar(
-      //     title: 'TikTok',
-      //   ),
-      // ),
-      body: Stack(
-        children: [
-          WebViewWidget(
-            controller: controller,
-          ),
-          loadingPercentage < 100
-              ? LinearProgressIndicator(
-                  color: Colors.red,
-                  value: loadingPercentage / 100.0,
-                )
-              : Container(),
-        ],
-      ),
+      body: Center(child: CircularProgressIndicator()),
     );
   }
 }
