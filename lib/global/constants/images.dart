@@ -28,7 +28,7 @@ class Images {
 
   //::::::::::::::::::::::::: All Logo Img
   static const String appLogo = 'assets/images/logo.png';
-  static const String serviceInc = 'assets/icons/product.png';
+  static const String serviceInc = 'assets/icons/briefcase.png';
 
   static const String facebookInc = 'assets/icons/facebook.png';
   static const String tikTokInc = 'assets/icons/tiktok.png';
