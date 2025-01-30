@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import '../controller/controller.dart';
-import '../global/widget/global_app_bar.dart';
-import '../global/widget/global_progress_hub.dart';
+import '../../controller/controller.dart';
+import '../../global/widget/global_app_bar.dart';
+import '../../global/widget/global_progress_hub.dart';
 
-class BlogScreen extends StatefulWidget {
-  const BlogScreen({super.key});
+class GalleryScreen extends StatefulWidget {
+  const GalleryScreen({super.key});
 
   @override
-  State<BlogScreen> createState() => _BlogScreenState();
+  State<GalleryScreen> createState() => _GalleryScreenState();
 }
 
-class _BlogScreenState extends State<BlogScreen> {
+class _GalleryScreenState extends State<GalleryScreen> {
   late final WebViewController controller;
   var loadingPercentage = 0;
 
@@ -68,7 +68,7 @@ class _BlogScreenState extends State<BlogScreen> {
           return NavigationDecision.navigate;
         },
       ))
-      ..loadRequest(Uri.parse('https://kaltiengineering.com/blog/'));
+      ..loadRequest(Uri.parse('https://kaltiengineering.com/images-gallery/'));
   }
 
   @override

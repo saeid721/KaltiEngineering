@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import '../controller/controller.dart';
-import '../global/widget/global_app_bar.dart';
-import '../global/widget/global_progress_hub.dart';
+import '../../controller/controller.dart';
+import '../../global/widget/global_app_bar.dart';
+import '../../global/widget/global_progress_hub.dart';
 
-class ServiceScreen extends StatefulWidget {
-  const ServiceScreen({super.key});
+class BlogScreen extends StatefulWidget {
+  const BlogScreen({super.key});
 
   @override
-  State<ServiceScreen> createState() => _ServiceScreenState();
+  State<BlogScreen> createState() => _BlogScreenState();
 }
 
-class _ServiceScreenState extends State<ServiceScreen> {
+class _BlogScreenState extends State<BlogScreen> {
   late final WebViewController controller;
   var loadingPercentage = 0;
 
@@ -68,7 +68,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
           return NavigationDecision.navigate;
         },
       ))
-      ..loadRequest(Uri.parse('https://kaltiengineering.com/solar-power-system-in-bangladesh/'));
+      ..loadRequest(Uri.parse('https://kaltiengineering.com/blog/'));
   }
 
   @override

@@ -47,12 +47,12 @@ class _InstagramScreenState extends State<InstagramScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: GlobalAppBar(
-          title: 'Instagram',
-        ),
-      ),
+      // appBar: const PreferredSize(
+      //   preferredSize: Size.fromHeight(60),
+      //   child: GlobalAppBar(
+      //     title: 'Instagram',
+      //   ),
+      // ),
       body: Stack(
         children: [
           WebViewWidget(

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import '../controller/controller.dart';
-import '../global/widget/global_app_bar.dart';
-import '../global/widget/global_progress_hub.dart';
+import '../../controller/controller.dart';
+import '../../global/widget/global_app_bar.dart';
+import '../../global/widget/global_progress_hub.dart';
 
-class ProductScreen extends StatefulWidget {
-  const ProductScreen({super.key});
+class AboutScreen extends StatefulWidget {
+  const AboutScreen({super.key});
 
   @override
-  State<ProductScreen> createState() => _ProductScreenState();
+  State<AboutScreen> createState() => _AboutScreenState();
 }
 
-class _ProductScreenState extends State<ProductScreen> {
+class _AboutScreenState extends State<AboutScreen> {
   late final WebViewController controller;
   var loadingPercentage = 0;
 
@@ -26,8 +26,7 @@ class _ProductScreenState extends State<ProductScreen> {
       ..setNavigationDelegate(NavigationDelegate(
         onPageStarted: (url) {
           // Update the loading state in the controller
-          Provider.of<WebViewLoadingController>(context, listen: false)
-              .isLoading = true;
+          Provider.of<WebViewLoadingController>(context, listen: false).isLoading = true;
           setState(() {
             loadingPercentage = 0;
           });
@@ -39,8 +38,7 @@ class _ProductScreenState extends State<ProductScreen> {
         },
         onPageFinished: (url) {
           // Once the page is finished loading, update the controller state
-          Provider.of<WebViewLoadingController>(context, listen: false)
-              .isLoading = false;
+          Provider.of<WebViewLoadingController>(context, listen: false).isLoading = false;
           setState(() {
             loadingPercentage = 100;
           });
@@ -64,15 +62,13 @@ class _ProductScreenState extends State<ProductScreen> {
           """);
         },
         onNavigationRequest: (request) {
-          if (request.url.contains("header") ||
-              request.url.contains("footer")) {
-            return NavigationDecision
-                .prevent; // Block header/footer network requests
+          if (request.url.contains("header") || request.url.contains("footer")) {
+            return NavigationDecision.prevent; // Block header/footer network requests
           }
           return NavigationDecision.navigate;
         },
       ))
-      ..loadRequest(Uri.parse('https://kaltiengineering.com/'));
+      ..loadRequest(Uri.parse('https://kaltiengineering.com/about-us/'));
   }
 
   @override
@@ -85,11 +81,9 @@ class _ProductScreenState extends State<ProductScreen> {
           title: 'Kalti Engineering',
         ),
       ),
-      body: Consumer<WebViewLoadingController>(
-          builder: (context, loadingController, child) {
+      body: Consumer<WebViewLoadingController>(builder: (context, loadingController, child) {
         return ProgressHUD(
-          inAsyncCall: loadingController
-              .isLoading, // Use the controller's isLoading state
+          inAsyncCall: loadingController.isLoading, // Use the controller's isLoading state
           child: Stack(
             children: [
               WebViewWidget(

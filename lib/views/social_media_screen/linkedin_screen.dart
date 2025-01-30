@@ -43,12 +43,12 @@ class _LinkedInScreenState extends State<LinkedInScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: GlobalAppBar(
-          title: 'Linkedin',
-        ),
-      ),
+      // appBar: const PreferredSize(
+      //   preferredSize: Size.fromHeight(60),
+      //   child: GlobalAppBar(
+      //     title: 'Linkedin',
+      //   ),
+      // ),
       body: Stack(
         children: [
           WebViewWidget(

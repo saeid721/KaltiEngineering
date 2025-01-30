@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import '../controller/controller.dart';
-import '../global/widget/global_app_bar.dart';
-import '../global/widget/global_progress_hub.dart';
+import '../../controller/controller.dart';
+import '../../global/widget/global_app_bar.dart';
+import '../../global/widget/global_progress_hub.dart';
 
-class VideoScreen extends StatefulWidget {
-  const VideoScreen({super.key});
+class ProductScreen extends StatefulWidget {
+  const ProductScreen({super.key});
 
   @override
-  State<VideoScreen> createState() => _VideoScreenState();
+  State<ProductScreen> createState() => _ProductScreenState();
 }
 
-class _VideoScreenState extends State<VideoScreen> {
+class _ProductScreenState extends State<ProductScreen> {
   late final WebViewController controller;
   var loadingPercentage = 0;
 
@@ -26,7 +26,8 @@ class _VideoScreenState extends State<VideoScreen> {
       ..setNavigationDelegate(NavigationDelegate(
         onPageStarted: (url) {
           // Update the loading state in the controller
-          Provider.of<WebViewLoadingController>(context, listen: false).isLoading = true;
+          Provider.of<WebViewLoadingController>(context, listen: false)
+              .isLoading = true;
           setState(() {
             loadingPercentage = 0;
           });
@@ -38,7 +39,8 @@ class _VideoScreenState extends State<VideoScreen> {
         },
         onPageFinished: (url) {
           // Once the page is finished loading, update the controller state
-          Provider.of<WebViewLoadingController>(context, listen: false).isLoading = false;
+          Provider.of<WebViewLoadingController>(context, listen: false)
+              .isLoading = false;
           setState(() {
             loadingPercentage = 100;
           });
@@ -62,13 +64,15 @@ class _VideoScreenState extends State<VideoScreen> {
           """);
         },
         onNavigationRequest: (request) {
-          if (request.url.contains("header") || request.url.contains("footer")) {
-            return NavigationDecision.prevent; // Block header/footer network requests
+          if (request.url.contains("header") ||
+              request.url.contains("footer")) {
+            return NavigationDecision
+                .prevent; // Block header/footer network requests
           }
           return NavigationDecision.navigate;
         },
       ))
-      ..loadRequest(Uri.parse('https://kaltiengineering.com/video-gallery/'));
+      ..loadRequest(Uri.parse('https://kaltiengineering.com/'));
   }
 
   @override
@@ -81,9 +85,11 @@ class _VideoScreenState extends State<VideoScreen> {
           title: 'Kalti Engineering',
         ),
       ),
-      body: Consumer<WebViewLoadingController>(builder: (context, loadingController, child) {
+      body: Consumer<WebViewLoadingController>(
+          builder: (context, loadingController, child) {
         return ProgressHUD(
-          inAsyncCall: loadingController.isLoading, // Use the controller's isLoading state
+          inAsyncCall: loadingController
+              .isLoading, // Use the controller's isLoading state
           child: Stack(
             children: [
               WebViewWidget(

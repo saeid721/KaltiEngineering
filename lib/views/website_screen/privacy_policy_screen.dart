@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import '../controller/controller.dart';
-import '../global/widget/global_app_bar.dart';
-import '../global/widget/global_progress_hub.dart';
+import '../../controller/controller.dart';
+import '../../global/widget/global_app_bar.dart';
+import '../../global/widget/global_progress_hub.dart';
 
-class GalleryScreen extends StatefulWidget {
-  const GalleryScreen({super.key});
+class PrivacyPolicyScreen extends StatefulWidget {
+  const PrivacyPolicyScreen({super.key});
 
   @override
-  State<GalleryScreen> createState() => _GalleryScreenState();
+  State<PrivacyPolicyScreen> createState() => _PrivacyPolicyScreenState();
 }
 
-class _GalleryScreenState extends State<GalleryScreen> {
+class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
   late final WebViewController controller;
   var loadingPercentage = 0;
 
@@ -68,7 +68,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
           return NavigationDecision.navigate;
         },
       ))
-      ..loadRequest(Uri.parse('https://kaltiengineering.com/images-gallery/'));
+      ..loadRequest(Uri.parse('https://kaltiengineering.com/privacy-policy/'));
   }
 
   @override

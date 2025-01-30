@@ -43,12 +43,12 @@ class _YouTubeScreenState extends State<YouTubeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: GlobalAppBar(
-          title: 'YouTube',
-        ),
-      ),
+      // appBar: const PreferredSize(
+      //   preferredSize: Size.fromHeight(60),
+      //   child: GlobalAppBar(
+      //     title: 'YouTube',
+      //   ),
+      // ),
       body: Stack(
         children: [
           WebViewWidget(

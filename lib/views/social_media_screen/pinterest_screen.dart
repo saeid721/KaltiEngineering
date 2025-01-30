@@ -43,12 +43,12 @@ class _PinterestScreenState extends State<PinterestScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: GlobalAppBar(
-          title: 'Pinterest',
-        ),
-      ),
+      // appBar: const PreferredSize(
+      //   preferredSize: Size.fromHeight(60),
+      //   child: GlobalAppBar(
+      //     title: 'Pinterest',
+      //   ),
+      // ),
       body: Stack(
         children: [
           WebViewWidget(

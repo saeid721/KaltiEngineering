@@ -43,12 +43,12 @@ class _WeChatScreenState extends State<WeChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: GlobalAppBar(
-          title: 'WeChat',
-        ),
-      ),
+      // appBar: const PreferredSize(
+      //   preferredSize: Size.fromHeight(60),
+      //   child: GlobalAppBar(
+      //     title: 'WeChat',
+      //   ),
+      // ),
       body: Stack(
         children: [
           WebViewWidget(

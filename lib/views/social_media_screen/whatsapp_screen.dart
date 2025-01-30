@@ -43,12 +43,12 @@ class _WhatsAppScreenState extends State<WhatsAppScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: GlobalAppBar(
-          title: 'WhatsApp',
-        ),
-      ),
+      // appBar: const PreferredSize(
+      //   preferredSize: Size.fromHeight(60),
+      //   child: GlobalAppBar(
+      //     title: 'WhatsApp',
+      //   ),
+      // ),
       body: Stack(
         children: [
           WebViewWidget(

@@ -43,12 +43,12 @@ class _FacebookScreenState extends State<FacebookScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: GlobalAppBar(
-          title: 'Facebook',
-        ),
-      ),
+      // appBar: const PreferredSize(
+      //   preferredSize: Size.fromHeight(60),
+      //   child: GlobalAppBar(
+      //     title: 'Facebook',
+      //   ),
+      // ),
       body: Stack(
         children: [
           WebViewWidget(

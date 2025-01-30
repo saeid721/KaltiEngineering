@@ -35,7 +35,7 @@ class _BloggerScreenState extends State<BloggerScreen> {
         },
       ))
       ..loadRequest(
-        Uri.parse('https://www.blogger.com/kaltiengineering/'),
+        Uri.parse('https://kaltiengineering.blogspot.com'),
       );
   }
 
@@ -43,12 +43,12 @@ class _BloggerScreenState extends State<BloggerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: GlobalAppBar(
-          title: 'Blogger',
-        ),
-      ),
+      // appBar: const PreferredSize(
+      //   preferredSize: Size.fromHeight(60),
+      //   child: GlobalAppBar(
+      //     title: 'Blogger',
+      //   ),
+      // ),
       body: Stack(
         children: [
           WebViewWidget(

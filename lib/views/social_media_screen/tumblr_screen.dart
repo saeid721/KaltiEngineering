@@ -44,12 +44,12 @@ class _TumblrScreenState extends State<TumblrScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: GlobalAppBar(
-          title: 'Tumblr',
-        ),
-      ),
+      // appBar: const PreferredSize(
+      //   preferredSize: Size.fromHeight(60),
+      //   child: GlobalAppBar(
+      //     title: 'Tumblr',
+      //   ),
+      // ),
       body: Stack(
         children: [
           WebViewWidget(

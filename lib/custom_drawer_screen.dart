@@ -9,19 +9,19 @@ import '../../../../../global/widget/global_image_loader.dart';
 import '../../../../../global/widget/global_text.dart';
 import '../global/constants/colors_resources.dart';
 import 'global/constants/enum.dart';
-import 'views/about_screen.dart';
-import 'views/blog_screen.dart';
+import 'views/website_screen/about_screen.dart';
+import 'views/website_screen/blog_screen.dart';
 import 'views/contact_screen/contact_screen.dart';
-import 'views/faq_screen.dart';
-import 'views/gallery_screen.dart';
+import 'views/website_screen/faq_screen.dart';
+import 'views/website_screen/gallery_screen.dart';
 import 'views/home_screen.dart';
 import 'views/notification_screen/notification_screen.dart';
-import 'views/privacy_policy_screen.dart';
 import 'views/privacy_policy_screen/privacy_policy_screen.dart';
-import 'views/product_screen.dart';
-import 'views/service_screen.dart';
-import 'views/trams_condition_screen.dart';
-import 'views/video_screen.dart';
+import 'views/website_screen/privacy_policy_screen.dart';
+import 'views/website_screen/product_screen.dart';
+import 'views/website_screen/service_screen.dart';
+import 'views/website_screen/trams_condition_screen.dart';
+import 'views/website_screen/video_screen.dart';
 
 class CustomDrawerScreen extends StatefulWidget {
   const CustomDrawerScreen({super.key});

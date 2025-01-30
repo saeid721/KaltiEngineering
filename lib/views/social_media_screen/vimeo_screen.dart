@@ -45,12 +45,12 @@ class _VimeoScreenState extends State<VimeoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: GlobalAppBar(
-          title: 'Vimeo',
-        ),
-      ),
+      // appBar: const PreferredSize(
+      //   preferredSize: Size.fromHeight(60),
+      //   child: GlobalAppBar(
+      //     title: 'Vimeo',
+      //   ),
+      // ),
       body: Stack(
         children: [
           WebViewWidget(

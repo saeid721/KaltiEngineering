@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import '../controller/controller.dart';
-import '../global/widget/global_app_bar.dart';
-import '../global/widget/global_progress_hub.dart';
+import '../../controller/controller.dart';
+import '../../global/widget/global_app_bar.dart';
+import '../../global/widget/global_progress_hub.dart';
 
-class TramsConditionScreen extends StatefulWidget {
-  const TramsConditionScreen({super.key});
+class SolutionScreen extends StatefulWidget {
+  const SolutionScreen({super.key});
 
   @override
-  State<TramsConditionScreen> createState() => _TramsConditionScreenState();
+  State<SolutionScreen> createState() => _SolutionScreenState();
 }
 
-class _TramsConditionScreenState extends State<TramsConditionScreen> {
+class _SolutionScreenState extends State<SolutionScreen> {
   late final WebViewController controller;
   var loadingPercentage = 0;
 
@@ -68,7 +68,7 @@ class _TramsConditionScreenState extends State<TramsConditionScreen> {
           return NavigationDecision.navigate;
         },
       ))
-      ..loadRequest(Uri.parse('https://kaltiengineering.com/terms-of-service/'));
+      ..loadRequest(Uri.parse('https://kaltiengineering.com/services/'));
   }
 
   @override

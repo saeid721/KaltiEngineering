@@ -43,12 +43,12 @@ class _ThreadsScreenState extends State<ThreadsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: GlobalAppBar(
-          title: 'Threads',
-        ),
-      ),
+      // appBar: const PreferredSize(
+      //   preferredSize: Size.fromHeight(60),
+      //   child: GlobalAppBar(
+      //     title: 'Threads',
+      //   ),
+      // ),
       body: Stack(
         children: [
           WebViewWidget(
