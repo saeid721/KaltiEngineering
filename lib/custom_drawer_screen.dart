@@ -175,11 +175,9 @@ class _CustomDrawerScreenState extends State<CustomDrawerScreen> {
                   children: const [
                     GlobalText(
                       str: 'Version: 1.0.1',
-                      color: ColorRes.red,
+                      color: ColorRes.textColor,
                       fontSize: 13,
-                      fontWeight: FontWeight.w400,
                       textAlign: TextAlign.center,
-                      fontFamily: 'Rubik',
                     ),
                   ],
                 ),
