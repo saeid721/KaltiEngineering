@@ -110,37 +110,37 @@ class _CustomDrawerScreenState extends State<CustomDrawerScreen> {
                             // case 3:
                             //   Get.to(() => const ProductScreen());
                             //   break;
-                            case 4:
+                            case 3:
                               Get.to(() => const VideoScreen());
                               break;
-                            case 5:
+                            case 4:
                               Get.to(() => const GalleryScreen());
                               break;
-                            case 6:
+                            case 5:
                               Get.to(() => const AboutScreen());
                               break;
-                            case 7:
+                            case 6:
                               Get.to(() => const BlogScreen());
                               break;
                             // case 8:
                             //   Get.to(() => const FaqScreen());
                             //   break;
-                            case 9:
+                            case 7:
                               Get.to(() => const TramsConditionScreen());
                               break;
-                            case 10:
+                            case 8:
                               Get.to(() => const PrivacyPolicyScreen());
                               break;
                             // case 11:
                             //   Get.to(() => const NotificationScreen());
                             //   break;
-                            case 12:
+                            case 9:
                               _shareApp(); // Trigger share app function
                               break;
-                            case 13:
+                            case 10:
                             // Add any action for Rating here
                               break;
-                            case 14:
+                            case 11:
                               Get.to(() => const AppPrivacyPolicyScreen());
                               break;
                           }
