@@ -2,12 +2,6 @@ class Images {
   Images._();
 
   //================/@ App Default Img @/==============
-  static const String close = 'assets/main_src/icons/close.png';
-  static const String delete = 'assets/main_src/icons/delete.png';
-  static const String scanner = 'assets/main_src/icons/scanner.png';
-  static const String eye1 = 'assets/main_src/icons/eye1.png';
-  static const String eye2 = 'assets/main_src/icons/eye2.png';
-
   static const String homeInc = 'assets/icons/home-security.png';
   static const String homeSecurityInc = 'assets/icons/home.png';
   static const String contactInc = 'assets/icons/contact-information.png';

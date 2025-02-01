@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../../custom_drawer_screen.dart';
 import '../../global/constants/colors_resources.dart';
 import '../../global/constants/images.dart';
-import '../../global/model.dart';
+import '../../model/model.dart';
 import '../../global/widget/global_app_bar.dart';
 import '../../global/widget/global_text.dart';
 import '../social_media_screen/blogger_screen.dart';

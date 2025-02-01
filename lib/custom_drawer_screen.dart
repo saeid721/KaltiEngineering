@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:share_plus/share_plus.dart';
 import '../../../../../global/constants/images.dart';
-import '../../../../../global/model.dart';
+import 'model/model.dart';
 import '../../../../../global/widget/global_container.dart';
 import '../../../../../global/widget/global_image_loader.dart';
 import '../../../../../global/widget/global_text.dart';
