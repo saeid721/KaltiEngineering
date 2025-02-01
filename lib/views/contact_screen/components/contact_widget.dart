@@ -131,7 +131,7 @@ class ContactDetailsWidget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Icon(
-                            Icons.home_repair_service,
+                            Icons.location_on_outlined,
                             size: 18,
                             color: ColorRes.primaryColor,
                           ),

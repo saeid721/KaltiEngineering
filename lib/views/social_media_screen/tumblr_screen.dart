@@ -19,7 +19,7 @@ class _TumblrScreenState extends State<TumblrScreen> {
   }
 
   Future<void> _launchInstagram() async {
-    final Uri url = Uri.parse('https://www.tumblr.com/kaltiengineering/');
+    final Uri url = Uri.parse('https://kaltiengineering.tumblr.com/');
 
     if (await canLaunchUrl(url)) {
       // Launch Instagram externally

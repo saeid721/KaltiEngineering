@@ -50,8 +50,8 @@ class _ContactScreenState extends State<ContactScreen> {
     GlobalMenuModel(img: Images.bloggerInc, text: 'Blogger'),
     GlobalMenuModel(img: Images.whatsAppInc, text: 'WhatsApp'),
     GlobalMenuModel(img: Images.telegramInc, text: 'Telegram'),
-    GlobalMenuModel(img: Images.weChatInc, text: 'WeChat'),
-    GlobalMenuModel(img: Images.redditInc, text: 'Reddit'),
+    // GlobalMenuModel(img: Images.weChatInc, text: 'WeChat'),
+    // GlobalMenuModel(img: Images.redditInc, text: 'Reddit'),
   ];
 
   @override
@@ -97,7 +97,7 @@ class _ContactScreenState extends State<ContactScreen> {
                   children: [
                     ContactDetailsWidget(
                           name: "Kalti Engineering",
-                          address: "House#40/41, Road#02, Janata Co-Operative Housing Society Ltd, Adabor, Dhaka-1207, Bangladesh.",
+                          address: "House# 509/3, Polok Road, South Manipur, Mirpur-2, Dhaka-1216, Bangladesh.",
                           email: "info@kaltiEngineering.com",
                           phone: "+88 01822 25 82 55",
                           call: "Call",
@@ -174,12 +174,12 @@ class _ContactScreenState extends State<ContactScreen> {
                           case 13:
                             Get.to(() => const TelegramScreen());
                             break;
-                          case 14:
-                            Get.to(() => const WeChatScreen());
-                            break;
-                        case 15:
-                          Get.to(() => const RedditScreen());
-                          break;
+                        //   case 14:
+                        //     Get.to(() => const WeChatScreen());
+                        //     break;
+                        // case 15:
+                        //   Get.to(() => const RedditScreen());
+                        //   break;
                         }
                       },
                       child: SocialMediaWidget(

@@ -12,7 +12,7 @@ class ColorRes {
   static const Color primaryColor = Color(0xFF009247);
   static const Color buttonColor = Color(0xFFFFA24A);
   static const Color textColor = Color(0xFF2A3256);
-  static const Color backgroundColor = Color(0xFFF7EFE5);
+  static const Color backgroundColor = Color(0xFFFFFFFD);
   static const Color borderColor = Color(0xFFACDF87);
 
 

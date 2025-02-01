@@ -8,6 +8,7 @@ import '../global/model.dart';
 import '../global/widget/global_app_bar.dart';
 import '../global/widget/global_container.dart';
 import '../global/widget/home_menu_widget.dart';
+import 'service_screen/commercial_residential_floor_screen.dart';
 import 'service_screen/construction_chemicals_screen.dart';
 import 'service_screen/damp_proofing_screen.dart';
 import 'service_screen/epoxy_floor_screen.dart';
@@ -46,6 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
     GlobalMenuModel(img: Images.serviceInc, text: 'Expansion Joint Sealant'),
     GlobalMenuModel(img: Images.serviceInc, text: 'ETP Protective Coating'),
     GlobalMenuModel(img: Images.serviceInc, text: 'Construction Chemicals'),
+    GlobalMenuModel(img: Images.serviceInc, text: 'Commercial & Residential Floor'),
 
   ];
 
@@ -204,12 +206,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           case 12:
                             Get.to(() => const ConstructionChemicalsScreen());
                             break;
+                          case 13:
+                            Get.to(() => const CommercialResidentialFloorScreen());
+                            break;
                         }
                       },
                       child: HomeMenuWidget(
-                        height: 24,
-                        width: 24,
-                        maxLines: 2,
+                        height: 30,
+                        width: 30,
+                        maxLines: 1,
                         imagePath: menuItem[index].img,
                         text: menuItem[index].text,
                         subText: menuItem[index].subText ?? "",

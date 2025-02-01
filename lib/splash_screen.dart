@@ -22,7 +22,7 @@ class SplashScreen extends StatelessWidget {
         height: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [ColorRes.borderColor, ColorRes.white],
+            colors: [ColorRes.white, ColorRes.white],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -54,7 +54,7 @@ class SplashScreen extends StatelessWidget {
                     const GlobalText(
                       str: 'This app is internet-based.',
                       color: ColorRes.red,
-                      fontSize: 14,
+                      fontSize: 13,
                       fontWeight: FontWeight.w400,
                       textAlign: TextAlign.center,
                       fontFamily: 'Rubik',

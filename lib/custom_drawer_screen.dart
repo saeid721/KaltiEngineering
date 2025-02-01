@@ -36,16 +36,16 @@ class _CustomDrawerScreenState extends State<CustomDrawerScreen> {
     GlobalMenuModel(img: Images.homeInc, text: 'Home'),
     GlobalMenuModel(img: Images.contactInc, text: 'Contact'),
     GlobalMenuModel(img: Images.greenEnergyInc, text: 'Energy Services'),
-    GlobalMenuModel(img: Images.productInc, text: 'Products'),
+    // GlobalMenuModel(img: Images.productInc, text: 'Products'),
     GlobalMenuModel(img: Images.videoInc, text: 'Videos'),
     GlobalMenuModel(img: Images.pictureInc, text: 'Gallery'),
     GlobalMenuModel(img: Images.informationInc, text: 'About Us'),
     //GlobalMenuModel(img: Images.appLogo, text: 'Contact Us'),
     GlobalMenuModel(img: Images.blogInc, text: 'Blog'),
-    GlobalMenuModel(img: Images.faqInc, text: 'FAQ'),
+    // GlobalMenuModel(img: Images.faqInc, text: 'FAQ'),
     GlobalMenuModel(img: Images.termsAndConditionsInc, text: 'Term & Conditions'),
     GlobalMenuModel(img: Images.privacyAndPolicyInc, text: 'Privacy & Policy'),
-    GlobalMenuModel(img: Images.notificationInc, text: 'Notification'),
+    // GlobalMenuModel(img: Images.notificationInc, text: 'Notification'),
     GlobalMenuModel(img: Images.shareInc, text: 'Share'),
     GlobalMenuModel(img: Images.ratingInc, text: 'Rating'),
     GlobalMenuModel(img: Images.policyInc, text: 'Privacy of App'),
@@ -68,9 +68,12 @@ class _CustomDrawerScreenState extends State<CustomDrawerScreen> {
           children: [
             Container(
               width: Get.width,
-              color: ColorRes.borderColor,
               padding: const EdgeInsets.only(
                   left: 20, right: 10, top: 50, bottom: 10),
+              decoration: BoxDecoration(
+                color: ColorRes.white100,
+                border: Border.all(color: ColorRes.primaryColor, width: .3),
+              ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: GlobalImageLoader(
@@ -104,9 +107,9 @@ class _CustomDrawerScreenState extends State<CustomDrawerScreen> {
                             case 2:
                               Get.to(() => const ServiceScreen());
                               break;
-                            case 3:
-                              Get.to(() => const ProductScreen());
-                              break;
+                            // case 3:
+                            //   Get.to(() => const ProductScreen());
+                            //   break;
                             case 4:
                               Get.to(() => const VideoScreen());
                               break;
@@ -119,18 +122,18 @@ class _CustomDrawerScreenState extends State<CustomDrawerScreen> {
                             case 7:
                               Get.to(() => const BlogScreen());
                               break;
-                            case 8:
-                              Get.to(() => const FaqScreen());
-                              break;
+                            // case 8:
+                            //   Get.to(() => const FaqScreen());
+                            //   break;
                             case 9:
                               Get.to(() => const TramsConditionScreen());
                               break;
                             case 10:
                               Get.to(() => const PrivacyPolicyScreen());
                               break;
-                            case 11:
-                              Get.to(() => const NotificationScreen());
-                              break;
+                            // case 11:
+                            //   Get.to(() => const NotificationScreen());
+                            //   break;
                             case 12:
                               _shareApp(); // Trigger share app function
                               break;
@@ -146,7 +149,7 @@ class _CustomDrawerScreenState extends State<CustomDrawerScreen> {
                           width: Get.width,
                           //margin: const EdgeInsets.only(bottom: 5),
                           padding: const EdgeInsets.symmetric(
-                              vertical: 8, horizontal: 8),
+                              vertical: 10, horizontal: 8),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
                             color: isClick == index

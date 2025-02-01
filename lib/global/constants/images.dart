@@ -8,7 +8,8 @@ class Images {
   static const String eye1 = 'assets/main_src/icons/eye1.png';
   static const String eye2 = 'assets/main_src/icons/eye2.png';
 
-  static const String homeInc = 'assets/icons/home.png';
+  static const String homeInc = 'assets/icons/home-security.png';
+  static const String homeSecurityInc = 'assets/icons/home.png';
   static const String contactInc = 'assets/icons/contact-information.png';
   static const String greenEnergyInc = 'assets/icons/green-energy.png';
   static const String productInc = 'assets/icons/product.png';
@@ -28,7 +29,7 @@ class Images {
 
   //::::::::::::::::::::::::: All Logo Img
   static const String appLogo = 'assets/images/logo.png';
-  static const String serviceInc = 'assets/icons/briefcase.png';
+  static const String serviceInc = 'assets/icons/customer-service.png';
 
   static const String facebookInc = 'assets/icons/facebook.png';
   static const String tikTokInc = 'assets/icons/tiktok.png';
