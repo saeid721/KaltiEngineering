@@ -3,7 +3,6 @@ import 'package:kalti/global/widget/global_sizedbox.dart';
 import '../../global/constants/colors_resources.dart';
 import '../../global/widget/global_app_bar.dart';
 import '../../global/widget/global_text.dart';
-import 'components/privacy_policy_widget.dart';
 
 class AppPrivacyPolicyScreen extends StatefulWidget {
   const AppPrivacyPolicyScreen({super.key});

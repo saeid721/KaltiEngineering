@@ -60,7 +60,7 @@ class _CustomDrawerScreenState extends State<CustomDrawerScreen> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: GlobalContainer(
+      child: Container(
         height: Get.height,
         width: Get.width,
         color: ColorRes.white,
@@ -75,7 +75,6 @@ class _CustomDrawerScreenState extends State<CustomDrawerScreen> {
                 border: Border.all(color: ColorRes.primaryColor, width: .3),
               ),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
                 child: GlobalImageLoader(
                   imagePath: 'assets/images/logo.png',
                   width: 220,
