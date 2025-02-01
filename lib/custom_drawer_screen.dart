@@ -21,7 +21,7 @@ import 'views/website_screen/trams_condition_screen.dart';
 import 'views/website_screen/video_screen.dart';
 
 class CustomDrawerScreen extends StatefulWidget {
-  const CustomDrawerScreen({Key? key}) : super(key: key);
+  const CustomDrawerScreen({super.key});
 
   @override
   State<CustomDrawerScreen> createState() => _CustomDrawerScreenState();
