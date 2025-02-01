@@ -1,8 +1,8 @@
 name: kalti
-description: "A new Flutter project."
+description: "This Flutter application is designed to provide users with a seamless and interactive experience through a custom navigation drawer. The app offers various sections including Home, Contact, Energy Services, Videos, Gallery, About Us, Blog, and essential legal pages like Terms & Conditions and Privacy Policies. Built using the GetX package for efficient state management and navigation, it also integrates features such as app sharing and in-app ratings. With a clean, user-friendly interface and intuitive design, the app ensures that users can easily access diverse content and services while enjoying smooth performance and modern aesthetics."
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 1.0.1
 
 environment:
   sdk: '>=3.3.4 <4.0.0'
