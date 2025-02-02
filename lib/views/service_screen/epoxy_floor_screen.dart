@@ -19,6 +19,7 @@ class _EpoxyFlooringScreenState extends State<EpoxyFlooringScreen> {
   late WebViewController controller;
   int loadingPercentage = 0;
   bool isOffline = false;
+  late Stream<ConnectivityResult> connectivityStream;
   late StreamSubscription<ConnectivityResult> connectivitySubscription;
 
   @override
@@ -37,24 +38,22 @@ class _EpoxyFlooringScreenState extends State<EpoxyFlooringScreen> {
   Future<void> checkConnectivity() async {
     var connectivityResult = await Connectivity().checkConnectivity();
     setState(() {
-      isOffline = connectivityResult.contains(ConnectivityResult.none);
+      isOffline = connectivityResult == ConnectivityResult.none;
     });
 
     // Listen for connectivity changes
-    connectivitySubscription = Connectivity()
-        .onConnectivityChanged
-        .listen((List<ConnectivityResult> results) {
+    connectivityStream = Connectivity().onConnectivityChanged as Stream<ConnectivityResult>;
+    connectivitySubscription = connectivityStream.listen((ConnectivityResult result) {
       if (mounted) {
         setState(() {
-          isOffline = results.contains(ConnectivityResult.none);
+          isOffline = result == ConnectivityResult.none;
         });
 
         if (!isOffline) {
-          controller
-              .reload(); // Reload the page when the connection is restored
+          controller.reload(); // Reload the page when the connection is restored
         }
       }
-    }) as StreamSubscription<ConnectivityResult>;
+    });
   }
 
   void initializeWebView() {
@@ -63,8 +62,7 @@ class _EpoxyFlooringScreenState extends State<EpoxyFlooringScreen> {
       ..setNavigationDelegate(NavigationDelegate(
         onPageStarted: (url) {
           if (!isOffline) {
-            Provider.of<WebViewLoadingController>(context, listen: false)
-                .isLoading = true;
+            Provider.of<WebViewLoadingController>(context, listen: false).isLoading = true;
             setState(() {
               loadingPercentage = 0;
             });
@@ -76,8 +74,7 @@ class _EpoxyFlooringScreenState extends State<EpoxyFlooringScreen> {
           });
         },
         onPageFinished: (url) {
-          Provider.of<WebViewLoadingController>(context, listen: false)
-              .isLoading = false;
+          Provider.of<WebViewLoadingController>(context, listen: false).isLoading = false;
           setState(() {
             loadingPercentage = 100;
           });
@@ -100,8 +97,7 @@ class _EpoxyFlooringScreenState extends State<EpoxyFlooringScreen> {
           """);
         },
         onNavigationRequest: (request) {
-          if (request.url.contains("header") ||
-              request.url.contains("footer")) {
+          if (request.url.contains("header") || request.url.contains("footer")) {
             return NavigationDecision.prevent;
           }
           return NavigationDecision.navigate;
@@ -112,8 +108,7 @@ class _EpoxyFlooringScreenState extends State<EpoxyFlooringScreen> {
           });
         },
       ))
-      ..loadRequest(Uri.parse(
-          'https://kaltiengineering.com/epoxy-flooring-in-bangladesh/'));
+      ..loadRequest(Uri.parse('https://kaltiengineering.com/epoxy-flooring-in-bangladesh/'));
   }
 
   Widget buildOfflineMessage() {
@@ -150,8 +145,7 @@ class _EpoxyFlooringScreenState extends State<EpoxyFlooringScreen> {
                 controller.reload();
               }
             },
-            child:
-                Text('Retry', style: TextStyle(color: ColorRes.primaryColor)),
+            child: Text('Retry', style: TextStyle(color: ColorRes.primaryColor),),
           ),
         ],
       ),
