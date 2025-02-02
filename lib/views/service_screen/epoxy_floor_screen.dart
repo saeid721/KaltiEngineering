@@ -1,7 +1,10 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:provider/provider.dart'; // Import provider package
+import 'package:provider/provider.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import '../../controller/controller.dart';
+import '../../global/constants/colors_resources.dart';
 import '../../global/widget/global_app_bar.dart';
 import '../../global/widget/global_progress_hub.dart';
 
@@ -13,23 +16,59 @@ class EpoxyFlooringScreen extends StatefulWidget {
 }
 
 class _EpoxyFlooringScreenState extends State<EpoxyFlooringScreen> {
-  late final WebViewController controller;
-  var loadingPercentage = 0;
+  late WebViewController controller;
+  int loadingPercentage = 0;
+  bool isOffline = false;
+  late StreamSubscription<ConnectivityResult> connectivitySubscription;
 
   @override
   void initState() {
     super.initState();
+    initializeWebView();
+    checkConnectivity();
+  }
 
-    // Initialize WebViewController
+  @override
+  void dispose() {
+    connectivitySubscription.cancel();
+    super.dispose();
+  }
+
+  Future<void> checkConnectivity() async {
+    var connectivityResult = await Connectivity().checkConnectivity();
+    setState(() {
+      isOffline = connectivityResult.contains(ConnectivityResult.none);
+    });
+
+    // Listen for connectivity changes
+    connectivitySubscription = Connectivity()
+        .onConnectivityChanged
+        .listen((List<ConnectivityResult> results) {
+      if (mounted) {
+        setState(() {
+          isOffline = results.contains(ConnectivityResult.none);
+        });
+
+        if (!isOffline) {
+          controller
+              .reload(); // Reload the page when the connection is restored
+        }
+      }
+    }) as StreamSubscription<ConnectivityResult>;
+  }
+
+  void initializeWebView() {
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setNavigationDelegate(NavigationDelegate(
         onPageStarted: (url) {
-          // Update the loading state in the controller
-          Provider.of<WebViewLoadingController>(context, listen: false).isLoading = true;
-          setState(() {
-            loadingPercentage = 0;
-          });
+          if (!isOffline) {
+            Provider.of<WebViewLoadingController>(context, listen: false)
+                .isLoading = true;
+            setState(() {
+              loadingPercentage = 0;
+            });
+          }
         },
         onProgress: (progress) {
           setState(() {
@@ -37,13 +76,12 @@ class _EpoxyFlooringScreenState extends State<EpoxyFlooringScreen> {
           });
         },
         onPageFinished: (url) {
-          // Once the page is finished loading, update the controller state
-          Provider.of<WebViewLoadingController>(context, listen: false).isLoading = false;
+          Provider.of<WebViewLoadingController>(context, listen: false)
+              .isLoading = false;
           setState(() {
             loadingPercentage = 100;
           });
 
-          // Inject CSS to hide header/footer after the page is loaded
           controller.runJavaScript("""
             (function() {
               var css = document.createElement('style');
@@ -62,13 +100,62 @@ class _EpoxyFlooringScreenState extends State<EpoxyFlooringScreen> {
           """);
         },
         onNavigationRequest: (request) {
-          if (request.url.contains("header") || request.url.contains("footer")) {
-            return NavigationDecision.prevent; // Block header/footer network requests
+          if (request.url.contains("header") ||
+              request.url.contains("footer")) {
+            return NavigationDecision.prevent;
           }
           return NavigationDecision.navigate;
         },
+        onWebResourceError: (WebResourceError error) {
+          setState(() {
+            isOffline = true;
+          });
+        },
       ))
-      ..loadRequest(Uri.parse('https://kaltiengineering.com/epoxy-flooring-in-bangladesh/'));
+      ..loadRequest(Uri.parse(
+          'https://kaltiengineering.com/epoxy-flooring-in-bangladesh/'));
+  }
+
+  Widget buildOfflineMessage() {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.signal_wifi_off,
+            size: 64,
+            color: Colors.grey[600],
+          ),
+          const SizedBox(height: 16),
+          Text(
+            'No Internet Connection',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey[800],
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'Please check your internet connection and try again',
+            style: TextStyle(
+              color: Colors.grey[600],
+            ),
+          ),
+          const SizedBox(height: 24),
+          ElevatedButton(
+            onPressed: () {
+              checkConnectivity();
+              if (!isOffline) {
+                controller.reload();
+              }
+            },
+            child:
+                Text('Retry', style: TextStyle(color: ColorRes.primaryColor)),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -81,23 +168,28 @@ class _EpoxyFlooringScreenState extends State<EpoxyFlooringScreen> {
           title: 'Epoxy Flooring Solution',
         ),
       ),
-      body: Consumer<WebViewLoadingController>(builder: (context, loadingController, child) {
-        return ProgressHUD(
-          inAsyncCall: loadingController.isLoading, // Use the controller's isLoading state
-          child: Stack(
-            children: [
-              WebViewWidget(
-                controller: controller,
-              ),
-              if (loadingPercentage < 100)
-                LinearProgressIndicator(
-                  color: Colors.red,
-                  value: loadingPercentage / 100.0,
-                ),
-            ],
-          ),
-        );
-      }),
+      body: Consumer<WebViewLoadingController>(
+        builder: (context, loadingController, child) {
+          return ProgressHUD(
+            inAsyncCall: loadingController.isLoading,
+            child: Stack(
+              children: [
+                if (isOffline)
+                  buildOfflineMessage()
+                else
+                  WebViewWidget(
+                    controller: controller,
+                  ),
+                if (loadingPercentage < 100 && !isOffline)
+                  LinearProgressIndicator(
+                    color: Colors.red,
+                    value: loadingPercentage / 100.0,
+                  ),
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 }

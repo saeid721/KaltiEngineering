@@ -24,6 +24,7 @@ dependencies:
   image: ^4.3.0
   carousel_slider: ^5.0.0
   share_plus: ^10.1.4
+  connectivity_plus: ^6.1.2
 
 dev_dependencies:
   flutter_test:
