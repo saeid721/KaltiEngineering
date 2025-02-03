@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'global/constants/colors_resources.dart';
 import 'global/constants/enum.dart';
 import 'global/widget/global_image_loader.dart';
-import 'global/widget/global_text.dart';
 import 'views/home_screen.dart';
 
 class SplashScreen extends StatelessWidget {

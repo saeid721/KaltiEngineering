@@ -12,14 +12,12 @@ import '../social_media_screen/google_screen.dart';
 import '../social_media_screen/instagram_screen.dart';
 import '../social_media_screen/linkedin_screen.dart';
 import '../social_media_screen/pinterest_screen.dart';
-import '../social_media_screen/reddit_screen.dart';
 import '../social_media_screen/telegram_screen.dart';
 import '../social_media_screen/threads_screen.dart';
 import '../social_media_screen/tiktok_screen.dart';
 import '../social_media_screen/tumblr_screen.dart';
 import '../social_media_screen/twitter_screen.dart';
 import '../social_media_screen/vimeo_screen.dart';
-import '../social_media_screen/we_chat_screen.dart';
 import '../social_media_screen/whatsapp_screen.dart';
 import '../social_media_screen/youtube_screen.dart';
 import 'components/contact_widget.dart';
@@ -64,16 +62,6 @@ class _ContactScreenState extends State<ContactScreen> {
         child: GlobalAppBar(
           title: 'Kalti Engineering',
           notiOnTap: () {},
-          leading: GestureDetector(
-            onTap: () {
-              if (drawerKey.currentState!.isDrawerOpen) {
-                drawerKey.currentState!.closeDrawer();
-              } else {
-                drawerKey.currentState!.openDrawer();
-              }
-            },
-            child: const Icon(Icons.menu, color: ColorRes.white),
-          ),
         ),
       ),
       key: drawerKey,
