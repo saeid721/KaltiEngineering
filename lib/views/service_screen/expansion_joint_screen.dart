@@ -1,6 +1,9 @@
+import 'dart:io';
+
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:provider/provider.dart'; // Import provider package
+import 'package:provider/provider.dart';
 import '../../controller/controller.dart';
 import '../../global/widget/global_app_bar.dart';
 import '../../global/widget/global_progress_hub.dart';
@@ -13,23 +16,49 @@ class ExpansionJointSealantScreen extends StatefulWidget {
 }
 
 class _ExpansionJointSealantScreenState extends State<ExpansionJointSealantScreen> {
-  late final WebViewController controller;
-  var loadingPercentage = 0;
+  late WebViewController controller;
+  int loadingPercentage = 0;
+  bool isOffline = false;
 
   @override
   void initState() {
     super.initState();
+    initializeWebView();
+  }
 
-    // Initialize WebViewController
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  /// Check if the device has an active internet connection
+  Future<void> checkConnectivity() async {
+    final List<ConnectivityResult> connectivityResult =
+    await (Connectivity().checkConnectivity());
+
+    if (connectivityResult.contains(ConnectivityResult.mobile) ||
+        connectivityResult.contains(ConnectivityResult.wifi)) {
+      final result = await InternetAddress.lookup('google.com');
+      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+        isOffline = true;
+      } else {
+        isOffline = false;
+      }
+    }
+  }
+
+  void initializeWebView() {
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setNavigationDelegate(NavigationDelegate(
-        onPageStarted: (url) {
-          // Update the loading state in the controller
-          Provider.of<WebViewLoadingController>(context, listen: false).isLoading = true;
-          setState(() {
-            loadingPercentage = 0;
-          });
+        onPageStarted: (url) async {
+          if (!isOffline) {
+            Provider.of<LoadingController>(context, listen: false).isLoading =
+            true;
+            setState(() {
+              loadingPercentage = 0;
+            });
+          }
         },
         onProgress: (progress) {
           setState(() {
@@ -37,13 +66,12 @@ class _ExpansionJointSealantScreenState extends State<ExpansionJointSealantScree
           });
         },
         onPageFinished: (url) {
-          // Once the page is finished loading, update the controller state
-          Provider.of<WebViewLoadingController>(context, listen: false).isLoading = false;
+          Provider.of<LoadingController>(context, listen: false).isLoading =
+          false;
           setState(() {
             loadingPercentage = 100;
           });
 
-          // Inject CSS to hide header/footer after the page is loaded
           controller.runJavaScript("""
             (function() {
               var css = document.createElement('style');
@@ -62,13 +90,50 @@ class _ExpansionJointSealantScreenState extends State<ExpansionJointSealantScree
           """);
         },
         onNavigationRequest: (request) {
-          if (request.url.contains("header") || request.url.contains("footer")) {
-            return NavigationDecision.prevent; // Block header/footer network requests
+          if (request.url.contains("header") ||
+              request.url.contains("footer")) {
+            return NavigationDecision.prevent;
           }
           return NavigationDecision.navigate;
         },
+        onWebResourceError: (WebResourceError error) {
+          setState(() {
+            isOffline = true;
+          });
+        },
       ))
       ..loadRequest(Uri.parse('https://kaltiengineering.com/expansion-joint-sealant-in-bangladesh/'));
+  }
+
+  Widget buildOfflineMessage() {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.signal_wifi_off,
+            size: 64,
+            color: Colors.grey[600],
+          ),
+          const SizedBox(height: 16),
+          Text(
+            'No Internet Connection',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey[800],
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'Please check your internet connection and try again',
+            style: TextStyle(
+              color: Colors.grey[600],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -81,23 +146,28 @@ class _ExpansionJointSealantScreenState extends State<ExpansionJointSealantScree
           title: 'Expansion Joint Sealant',
         ),
       ),
-      body: Consumer<WebViewLoadingController>(builder: (context, loadingController, child) {
-        return ProgressHUD(
-          inAsyncCall: loadingController.isLoading, // Use the controller's isLoading state
-          child: Stack(
-            children: [
-              WebViewWidget(
-                controller: controller,
-              ),
-              if (loadingPercentage < 100)
-                LinearProgressIndicator(
-                  color: Colors.red,
-                  value: loadingPercentage / 100.0,
-                ),
-            ],
-          ),
-        );
-      }),
+      body: Consumer<LoadingController>(
+        builder: (context, loadingController, child) {
+          return ProgressHUD(
+            inAsyncCall: loadingController.isLoading,
+            child: Stack(
+              children: [
+                if (isOffline)
+                  buildOfflineMessage()
+                else
+                  WebViewWidget(
+                    controller: controller,
+                  ),
+                if (loadingPercentage < 100)
+                  LinearProgressIndicator(
+                    color: Colors.red,
+                    value: loadingPercentage / 100.0,
+                  ),
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 }

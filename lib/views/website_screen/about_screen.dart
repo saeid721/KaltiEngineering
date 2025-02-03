@@ -26,7 +26,7 @@ class _AboutScreenState extends State<AboutScreen> {
       ..setNavigationDelegate(NavigationDelegate(
         onPageStarted: (url) {
           // Update the loading state in the controller
-          Provider.of<WebViewLoadingController>(context, listen: false).isLoading = true;
+          Provider.of<LoadingController>(context, listen: false).isLoading = true;
           setState(() {
             loadingPercentage = 0;
           });
@@ -38,7 +38,7 @@ class _AboutScreenState extends State<AboutScreen> {
         },
         onPageFinished: (url) {
           // Once the page is finished loading, update the controller state
-          Provider.of<WebViewLoadingController>(context, listen: false).isLoading = false;
+          Provider.of<LoadingController>(context, listen: false).isLoading = false;
           setState(() {
             loadingPercentage = 100;
           });
@@ -81,7 +81,7 @@ class _AboutScreenState extends State<AboutScreen> {
           title: 'Kalti Engineering',
         ),
       ),
-      body: Consumer<WebViewLoadingController>(builder: (context, loadingController, child) {
+      body: Consumer<LoadingController>(builder: (context, loadingController, child) {
         return ProgressHUD(
           inAsyncCall: loadingController.isLoading, // Use the controller's isLoading state
           child: Stack(

@@ -26,7 +26,7 @@ class _ProductScreenState extends State<ProductScreen> {
       ..setNavigationDelegate(NavigationDelegate(
         onPageStarted: (url) {
           // Update the loading state in the controller
-          Provider.of<WebViewLoadingController>(context, listen: false)
+          Provider.of<LoadingController>(context, listen: false)
               .isLoading = true;
           setState(() {
             loadingPercentage = 0;
@@ -39,7 +39,7 @@ class _ProductScreenState extends State<ProductScreen> {
         },
         onPageFinished: (url) {
           // Once the page is finished loading, update the controller state
-          Provider.of<WebViewLoadingController>(context, listen: false)
+          Provider.of<LoadingController>(context, listen: false)
               .isLoading = false;
           setState(() {
             loadingPercentage = 100;
@@ -85,7 +85,7 @@ class _ProductScreenState extends State<ProductScreen> {
           title: 'Kalti Engineering',
         ),
       ),
-      body: Consumer<WebViewLoadingController>(
+      body: Consumer<LoadingController>(
           builder: (context, loadingController, child) {
         return ProgressHUD(
           inAsyncCall: loadingController
