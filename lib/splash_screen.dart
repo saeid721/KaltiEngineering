@@ -51,15 +51,33 @@ class SplashScreen extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     // App Description
-                    const GlobalText(
-                      str: 'This app is internet-based.',
-                      color: ColorRes.red,
-                      fontSize: 13,
-                      fontWeight: FontWeight.w400,
+                    RichText(
                       textAlign: TextAlign.center,
-                      fontFamily: 'Rubik',
-                      fontStyle: FontStyle.italic,
-                    ),
+                      text: TextSpan(
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          fontFamily: 'Rubik',
+                          fontStyle: FontStyle.italic,
+                          color: ColorRes.red,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: 'Stay connected with ',
+                          ),
+                          TextSpan(
+                            text: 'Kalti Engineering ',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black, // Highlighted part
+                            ),
+                          ),
+                          TextSpan(
+                            text: '—your gateway to accessible anytime, anywhere with an internet connection.',
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
